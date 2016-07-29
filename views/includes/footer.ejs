@@ -1,0 +1,39 @@
+<% if (page.seo) { %>
+
+<div class="decription">
+    <div class="decription-text">
+        <%- page.seo %>
+    </div>
+</div>
+
+<% } %>
+
+<div class="decription recentlyViewedBlock" style="display: none;">
+    <div>Вы надавно смотрели:</div>
+    <div id="recentlyViewed"></div>
+</div>
+
+<footer>
+    <div class="footer">
+        <span style="color: #ccc;">
+            <strong style="color: #fff;">© 2016 CinemaPress ACMS</strong> | Для связи с администрацией <%- page.email %>
+        </span>
+        <% if (page.social) { %>
+        <span class="copyright">
+            <% if (page.social.vk) { %><a href="<%- page.social.vk %>">ВК</a><% } %>
+            <% if (page.social.facebook) { %><span> | </span><a href="<%- page.social.facebook %>">facebook</a><% } %>
+            <% if (page.social.twitter) { %><span> | </span><a href="<%- page.social.twitter %>">twitter</a><% } %>
+            <% if (page.social.gplus) { %><span> | </span><a href="<%- page.social.gplus %>">G+</a><% } %>
+        </span>
+        <% } %>
+    </div>
+
+    <script src="/themes/ramsay/public/js/all.js"></script>
+
+    <script type="text/javascript" src="http://yastatic.net/es5-shims/0.0.2/es5-shims.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="http://yastatic.net/share2/share.js" charset="utf-8"></script>
+
+    <div id="scroller" class="b-top" style="display: none;"><span class="b-top-but">Наверх</span></div>
+</footer>
+
+<%- page.codes.footer %>

@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ru-RU">
+<head>
+
+    <% include includes/head.ejs %>
+
+</head>
+<body>
+<div class="wrapper">
+
+    <% include includes/header.ejs %>
+
+    <div class="container">
+        <main>
+            <div class="main">
+
+                <h1 style="padding:10px; text-align: center; background: #111; border-radius: 5px; margin: 5px;">Смотреть фильмы онлайн бесплатно в FullHD качестве</h1>
+
+                <% if (typeof movies == 'object') { for (var type in movies) { if (movies.hasOwnProperty(type)) { %>
+
+                <% if (movies[type].length) { %>
+
+                <% movies[type].forEach(function (category) { %>
+
+                <div class="sort">
+
+                    <h2><%- category.name %></h2>
+
+                </div>
+
+                <div>
+
+                    <% if (category.movies.length) { %>
+
+                    <% category.movies.forEach(function (movie) { %>
+
+                    <div class="short_zombiz">
+                        <div class="short_story">
+                            <div class="title">
+                                <img src="/themes/ramsay/public/images/video-play.png" class="h2-title-short" alt="Онлайн">
+                                <h3><a href="<%- movie.url %>"><%- movie.title_ru %> (<%- movie.year %>)</a></h3>
+                            </div>
+                            <div class="short_img2">
+                                <div class="short_img2-layout">
+                                    <div class="container-a4">
+                                        <ul class="caption-style-4">
+                                            <li>
+                                                <a href="<%- movie.url %>" title="<%- movie.title_ru %>">
+                                                    <img src="<%- movie.poster %>" alt="<%- movie.title_ru %> (<%- movie.year %>)" title="<%- movie.title_ru %> (<%- movie.year %>)" class="okrug">
+                                                    <div class="caption">
+                                                        <div class="blur"></div>
+                                                        <div class="caption-text"></div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <%- movie.description.substr(0, 200) %>...
+
+                                <% if (movie.imdb_rating) { %>
+                                <div style="margin: 10px auto">
+                                    <span class="bold">Общий рейтинг:</span> <span class="hd"><%- movie.rating %>%</span>
+                                </div>
+                                <% } %>
+
+                                <% if (movie.year_url) { %>
+                                <div style="margin-bottom: 5px">
+                                    <span class="bold">Год:</span> <%- movie.year_url %>
+                                </div>
+                                <% } %>
+                                <% if (movie.countries_url) { %>
+                                <div style="margin-bottom: 5px">
+                                    <span class="bold">Страна:</span> <%- movie.countries_url %>
+                                </div>
+                                <% } %>
+                                <% if (movie.genres_url) { %>
+                                <div style="margin-bottom: 5px">
+                                    <span class="bold">Жанр:</span> <%- movie.genres_url %>
+                                </div>
+                                <% } %>
+                                <% if (movie.directors_url) { %>
+                                <div style="margin-bottom: 5px">
+                                    <span class="bold">Режиссер:</span> <%- movie.directors_url %>
+                                </div>
+                                <% } %>
+                                <% if (movie.actors_url) { %>
+                                <div style="margin-bottom: 5px">
+                                    <span class="bold">Актеры:</span> <%- movie.actors_url %>
+                                </div>
+                                <% } %>
+                                <% if (movie.kp_rating) { %>
+                                <div style="margin-bottom: 5px">
+                                    <span class="bold" style="color: #F29420">КмноПоиск:</span> <%- movie.kp_rating/10 %> (<%- movie.kp_vote %> голосов)
+                                </div>
+                                <% } %>
+                                <% if (movie.imdb_rating) { %>
+                                <div style="margin-bottom: 5px">
+                                    <span class="bold" style="color: #E4AD2C">IMDb:</span> <%- movie.imdb_rating/10 %> (<%- movie.imdb_vote %> голосов)
+                                </div>
+                                <% } %>
+                            </div>
+                                <span style="float:right; padding-top: 4px;">
+                                    <span class="dateicon" title="Дата"><%- movie.premiere %></span>
+                                </span>
+                            <div style="clear:both;"></div>
+                        </div>
+                    </div>
+
+                    <% }); %>
+
+                    <% } %>
+
+                </div>
+
+                <% }); %>
+
+                <% } %>
+
+                <% } } } %>
+
+            </div>
+        </main>
+        <aside>
+
+            <% include includes/right.ejs %>
+
+        </aside>
+    </div>
+
+    <% include includes/footer.ejs %>
+
+</div>
+</body>
+</html>

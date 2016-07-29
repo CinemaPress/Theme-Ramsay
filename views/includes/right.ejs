@@ -1,0 +1,96 @@
+<div class="left_side" id="mMenu">
+    <div class="left_block">
+
+        <% if (typeof top == 'object' && top.movies.length) { %>
+
+        <div class="msupdate_block">
+            <div class="msupdate_block_date"><%- top.name %></div>
+            <ul class="msupdate_block_list">
+
+                <% top.movies.forEach(function (movie) { %>
+
+                <li class="msupdate_block_list_item">
+                    <div class="msupdate_block_list_item_inner">
+                        <div class="cell cell-1">
+                            <a class="msupdate_block_list_link" href="<%- movie.url %>"><%- movie.title_ru %></a> <span class="season"><%- movie.title_en %></span>
+                        </div>
+                        <span class="cell cell-2"><%- movie.year %></span>
+                    </div>
+                </li>
+
+                <% }); %>
+
+            </ul>
+        </div>
+
+        <% } %>
+
+        <ul class="leftmenu mc2">
+            <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.year %>/2016"><span>Новинки кино</span></a></li>
+            <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.year %>/2015"><span>Фильмы 2015 года</span></a></li>
+            <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.year %>/2014"><span>Фильмы 2014 года</span></a></li>
+            <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.year %>/2013"><span>Фильмы 2013 года</span></a></li>
+            <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.year %>/2012"><span>Фильмы 2012 года</span></a></li>
+        </ul>
+        <div class="menugod">
+            <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.type %>/<%- page.urls.types.movie %>" class="menugo1d">Кино</a>
+            <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.collection %>" class="menugo2d">Подборки фильмов</a></div>
+        <span class="left_blockb">Категории</span><br/><br/>
+        <nav>
+            <ul class="leftmenu mc1">
+                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/триллер"><span>Триллеры</span></a></li>
+                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/приключения"><span>Приключения</span></a></li>
+                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/мультфильм"><span>Мультфильмы</span></a></li>
+                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/детектив"><span>Детективы</span></a></li>
+                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/вестерн"><span>Вестерны</span></a></li>
+                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/боевик"><span>Боевики</span></a></li>
+                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/ужасы"><span>Ужасы</span></a></li>
+                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/комедия"><span>Комедии</span></a></li>
+                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/криминал"><span>Криминал</span></a></li>
+                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/мюзикл"><span>Мюзиклы</span></a></li>
+                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/короткометражка"><span>Короткометражки</span></a></li>
+                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/история"><span>Исторические</span></a></li>
+                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/документальный"><span>Документальные</span></a></li>
+                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/спорт"><span>Спорт</span></a></li>
+                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/мелодрама"><span>Мелодрамы</span></a></li>
+                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/драма"><span>Драмы</span></a></li>
+                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/биография"> <span>Биография</span></a></li>
+                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/военный"><span>Военные</span></a></li>
+                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/фантастика"><span>Фантастика</span></a></li>
+                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/фэнтези"><span>Фэнтези</span></a></li>
+            </ul>
+        </nav>
+
+        <ul class="leftmenu mc2">
+            <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.year %>"><span>Все годы</span></a></li>
+            <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>"><span>Все жанры</span></a></li>
+            <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.country %>"><span>Все страны</span></a></li>
+            <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.actor %>"><span>Все актеры</span></a></li>
+            <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.director %>"><span>Все режиссеры</span></a></li>
+        </ul>
+
+        <% if (typeof soon == 'object' && soon.movies.length) { %>
+
+        <span class="left_blockb">Скоро</span><br>
+        <span class="bold-t">на сайте</span><br>
+        <div class="slideserbox">
+            <ul id="slides4">
+
+                <% soon.movies.forEach(function (movie) { %>
+
+                <li>
+                    <a href="<%- movie.url %>" class="brost" title="<%- movie.title_ru %> (<%- movie.year %>)">
+                        <img class="ghost" src="<%- movie.poster %>" alt="<%- movie.title_ru %> (<%- movie.year %>)"/>
+                        <span><%- movie.title_ru %> (<%- movie.year %>)</span>
+                    </a>
+                </li>
+
+                <% }); %>
+
+            </ul>
+        </div>
+
+        <% } %>
+
+    </div>
+</div>
