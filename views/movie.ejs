@@ -46,11 +46,6 @@
                                         </p>
                                     </div>
                                     <div class="full_details">
-                                        <% if (movie.imdb_rating) { %>
-                                        <div style="margin: 10px auto">
-                                            <span class="bold">Общий рейтинг:</span> <span class="hd"><%- movie.rating %>%</span>
-                                        </div>
-                                        <% } %>
                                         <% if (movie.year_url) { %>
                                         <div style="margin-bottom: 5px">
                                             <span class="bold">Год:</span> <%- movie.year_url %>
@@ -103,8 +98,20 @@
                                     </div>
                                 </div>
                                 <div class="vozmojnosti1 watchLaterBlock" style="display: none;">
+                                    <% if (movie.rating) { %>
+                                    <div class="rating-left">
+                                        <div class="rating">
+                                            <ul class="unit-rating">
+                                                <li class="current-rating" style="width:<%- movie.rating %>%;"><%- movie.rating/10 %></li>
+                                            </ul>
+                                        </div>
+                                        <div class="rating-b">
+                                            <%- movie.rating/10 %> / 10 (<span><%- movie.vote %></span> чел.)
+                                        </div>
+                                    </div>
+                                    <% } %>
                                     <div class="share-right">
-                                        <a href="#watchLaterMovie" id="watchLater" class="send-admin">Досмотреть позже</a>
+                                        <a href="javascript:void(0)" id="watchLater" class="send-admin">Досмотреть позже</a>
                                     </div>
                                 </div>
                             </div>

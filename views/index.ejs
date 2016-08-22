@@ -57,14 +57,11 @@
                                     </div>
                                 </div>
 
-                                <%- movie.description.substr(0, 200) %>...
-
-                                <% if (movie.imdb_rating) { %>
-                                <div style="margin: 10px auto">
-                                    <span class="bold">Общий рейтинг:</span> <span class="hd"><%- movie.rating %>%</span>
+                                <% if (movie.description) { %>
+                                <div style="margin-bottom: 5px">
+                                    <%- movie.description.substr(0, 200) %>...
                                 </div>
                                 <% } %>
-
                                 <% if (movie.year_url) { %>
                                 <div style="margin-bottom: 5px">
                                     <span class="bold">Год:</span> <%- movie.year_url %>
@@ -104,6 +101,20 @@
                                 <span style="float:right; padding-top: 4px;">
                                     <span class="dateicon" title="Дата"><%- movie.premiere %></span>
                                 </span>
+                            <div style="clear:both;"></div>
+                            <% if (movie.rating) { %>
+                            <span class="rate">
+                                <span class="add_right">
+                                    <div>
+                                        <div class="rating">
+                                            <ul class="unit-rating">
+                                                <li class="current-rating" style="width:<%- movie.rating %>%;"><%- movie.rating/10 %></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </span>
+                            </span>
+                            <% } %>
                             <div style="clear:both;"></div>
                         </div>
                     </div>

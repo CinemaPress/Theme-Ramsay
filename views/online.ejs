@@ -54,8 +54,20 @@
                                 </div>
                             </div>
                             <div class="vozmojnosti1 watchLaterBlock" style="display: none;">
+                                <% if (movie.rating) { %>
+                                <div class="rating-left">
+                                    <div class="rating">
+                                        <ul class="unit-rating">
+                                            <li class="current-rating" style="width:<%- movie.rating %>%;"><%- movie.rating/10 %></li>
+                                        </ul>
+                                    </div>
+                                    <div class="rating-b">
+                                        <%- movie.rating/10 %> / 10 (<span><%- movie.vote %></span> чел.)
+                                    </div>
+                                </div>
+                                <% } %>
                                 <div class="share-right">
-                                    <a href="#watchLaterMovie" id="watchLater" class="send-admin">Досмотреть позже</a>
+                                    <a href="javascript:void(0)" id="watchLater" class="send-admin">Досмотреть позже</a>
                                 </div>
                             </div>
                             <div style="clear:both;"></div>
