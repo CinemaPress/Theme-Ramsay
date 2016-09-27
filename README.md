@@ -1,7 +1,10 @@
 # Theme Ramsay
-:art: Шаблон «Ramsay» для CinemaPress ACMS
 
 ![Шаблон «Ramsay» для CinemaPress ACMS](https://raw.githubusercontent.com/CinemaPress/Theme-Ramsay/master/screenshot.png "Шаблон «Ramsay» для CinemaPress ACMS")
+
+:art: Шаблон «Ramsay» для CinemaPress ACMS
+
+- <a href="http://Ramsay.CinemaPress.org/" target="_blank">Ramsay.CinemaPress.org</a>
 
 ## Установка
 1. [Скачать архив](https://github.com/CinemaPress/Theme-Ramsay/archive/master.zip)
