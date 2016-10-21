@@ -38,7 +38,7 @@
                         <div class="short_story">
                             <div class="title">
                                 <img src="/themes/ramsay/public/images/video-play.png" class="h2-title-short" alt="Онлайн">
-                                <h3><a href="<%- movie.url %>"><%- movie.title_ru %> (<%- movie.year %>)</a></h3>
+                                <h3><a href="<%- movie.url %>"><%- movie.title_ru %> (<% if (movie.season && movie.episode) { %><%- movie.season %> сезон <%- movie.episode %> серия <% if (movie.translate) { %><%- movie.translate %><% } %><% } else { %><%- movie.year %><% } %>)</a></h3>
                             </div>
                             <div class="short_img2">
                                 <div class="short_img2-layout">
