@@ -62,11 +62,62 @@
                             </div>
                             <div class="nomt">
                                 <div style="margin: 30px auto;">
-                                    <div style="width: 100%; height: 1100px; position: relative;">
+                                    <div style="width: 100%; position: relative;">
                                         <%- page.player %>
                                     </div>
                                 </div>
                             </div>
+                            <div style="clear:both;"></div>
+
+                            <% if (typeof movies == 'object') { for (var type in movies) { if (movies.hasOwnProperty(type)) { %>
+
+                            <% if (movies[type].length) { %>
+
+                            <% movies[type].forEach(function (category) { %>
+
+                            <div style="clear: both">
+
+                                <div class="bold advice_inf" style="margin: 20px auto 0 auto">
+                                    <i><%- category.name %></i>
+                                </div>
+
+                                <ul class="bloggg" style="padding-top: 15px;">
+
+                                    <% if (category.movies.length) { %>
+
+                                    <% category.movies.forEach(function (movie) { %>
+
+                                    <li>
+                                        <a href="<%- movie.url %>" class="brost" title="<%- movie.title_ru %> (<%- movie.year %>)">
+                                            <img src="<%- movie.poster %>" alt="<%- movie.title_ru %> (<%- movie.year %>)" style="height:170px; width:115px;">
+                                            <%- movie.title_ru %> (<%- movie.year %>)
+                                        </a>
+                                    </li>
+
+                                    <% }); %>
+
+                                    <% } %>
+
+                                </ul>
+
+                            </div>
+
+                            <% }); %>
+
+                            <% } %>
+
+                            <% } } } %>
+
+                            <div style="clear:both;"></div>
+                            <% if (page.comments) { %>
+                            <div id="otzyvy">
+                                <div class="zagolovvki" style="margin-top: 20px; margin-bottom:20px;">
+                                    <div id="cinemapress-comments-list">
+                                        <%- page.comments %>
+                                    </div>
+                                </div>
+                            </div>
+                            <% } %>
                         </div>
                         <div style="clear:both;"></div>
                     </div>
