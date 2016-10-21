@@ -39,6 +39,20 @@
                             <img src="/themes/ramsay/public/images/video-play.png" class="h2-title-short" alt="Онлайн">
                             <h1>Смотреть онлайн <%- movie.title_ru %> <%- movie.year %> в хорошем качестве hd 720</h1>
                         </div>
+
+                        <% if (page.seo) { %>
+
+                        <div class="fullstory">
+                            <%- page.seo %>
+                        </div>
+
+                        <% } %>
+
+                        <div class="fullstory episodesListBlock" style="display: none;">
+                            <h3><%- movie.title %> новые серии</h3>
+                            <div id="episodesList" data-id="<%- movie.kp_id %>"></div>
+                        </div>
+
                         <div class="fullstory">
                             <div class="menuSch" style="left: inherit; top: inherit;">
                                 <a href="<%- movie.url %>/<%- page.urls.movies.online %>" class="red"><strong>Онлайн</strong></a>

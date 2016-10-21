@@ -41,7 +41,7 @@
                                 <div>
                                     <div class="short_img">
                                         <img src="<%- movie.poster %>" alt="<%- movie.title_ru %>" title="<%- movie.title_ru %>">
-                                        <p>
+                                        <p style="text-align: justify">
                                             <%- movie.description %>
                                         </p>
                                     </div>
@@ -83,6 +83,12 @@
                                         <% } %>
                                     </div>
                                 </div>
+
+                                <div class="episodesListBlock" style="display: none; margin: 10px auto;">
+                                    <h3><%- movie.title %> новые серии</h3>
+                                    <div id="episodesList" data-id="<%- movie.kp_id %>"></div>
+                                </div>
+
                                 <div class="seostronk" style="padding: 10px">
                                     <h2>Смотреть онлайн <%- movie.title_ru %> <%- movie.year %> в хорошем качестве hd 720</h2>
                                 </div>
@@ -115,6 +121,18 @@
                                     </div>
                                 </div>
                             </div>
+                            <div style="clear:both;"></div>
+
+                            <% if (page.seo) { %>
+
+                            <div class="decription">
+                                <div class="decription-text">
+                                    <%- page.seo %>
+                                </div>
+                            </div>
+
+                            <% } %>
+
                             <div style="clear:both;"></div>
 
                             <% if (typeof movies == 'object') { for (var type in movies) { if (movies.hasOwnProperty(type)) { %>

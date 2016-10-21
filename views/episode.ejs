@@ -29,7 +29,7 @@
 								<span><%- movie.title_ru %></span>
 							</a>
 						</span> »
-                        Смотреть трейлер
+                        Серия онлайн
                     </div>
                 </div>
 
@@ -37,7 +37,7 @@
                     <div class="short_zombiz">
                         <div class="title-full">
                             <img src="/themes/ramsay/public/images/video-play.png" class="h2-title-short" alt="Онлайн">
-                            <h1>Смотреть трейлер <%- movie.title_ru %> <%- movie.year %> на русском языке</h1>
+                            <h1><%- page.title %></h1>
                         </div>
 
                         <% if (page.seo) { %>
@@ -57,14 +57,31 @@
                             <div class="menuSch" style="left: inherit; top: inherit;">
                                 <a href="<%- movie.url %>/<%- page.urls.movies.online %>">Онлайн</a>
                                 <a href="<%- movie.url %>/<%- page.urls.movies.download %>">Скачать</a>
-                                <a href="<%- movie.url %>/<%- page.urls.movies.trailer %>" class="red"><strong>Трейлер</strong></a>
+                                <a href="<%- movie.url %>/<%- page.urls.movies.trailer %>">Трейлер</a>
                                 <a href="<%- movie.url %>/<%- page.urls.movies.picture %>">Кадры</a>
                             </div>
                             <div class="nomt">
-                                <div style="margin: 30px auto">
+                                <div style="margin: 30px auto 0 auto">
                                     <div style="width: 100%; height: 370px; position: relative;">
                                         <%- page.player %>
                                     </div>
+                                </div>
+                            </div>
+                            <div class="vozmojnosti1 watchLaterBlock" style="display: none;">
+                                <% if (movie.rating) { %>
+                                <div class="rating-left">
+                                    <div class="rating">
+                                        <ul class="unit-rating">
+                                            <li class="current-rating" style="width:<%- movie.rating %>%;"><%- movie.rating/10 %></li>
+                                        </ul>
+                                    </div>
+                                    <div class="rating-b">
+                                        <%- movie.rating/10 %> / 10 (<span><%- movie.vote %></span> чел.)
+                                    </div>
+                                </div>
+                                <% } %>
+                                <div class="share-right">
+                                    <a href="javascript:void(0)" id="watchLater" class="send-admin">Досмотреть позже</a>
                                 </div>
                             </div>
                             <div style="clear:both;"></div>
