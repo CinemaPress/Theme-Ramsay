@@ -24,7 +24,7 @@
                         <span>
 							<%- movie.genre_url %>
 						</span> »
-                        <%- movie.title_ru %>
+                        <%- movie.title %>
                     </div>
                 </div>
 
@@ -32,7 +32,7 @@
                     <div class="short_zombiz">
                         <div class="title-full">
                             <img src="/themes/ramsay/public/images/video-play.png" class="h2-title-short" alt="Онлайн">
-                            <h1><%- movie.title_ru %> (<%- movie.year %>) смотреть онлайн</h1>
+                            <h1><%- movie.title %> (<%- movie.year %>) смотреть онлайн</h1>
                         </div>
                         <div class="fullstory">
                             <div style="margin-top: 286px;" class="nomt">
@@ -40,7 +40,7 @@
                                 <div class="vozmojnosti">Важно! <i><b>Теперь данный фильм доступен онлайн на телефоне и планшете.</b></i></div>
                                 <div>
                                     <div class="short_img">
-                                        <img src="<%- movie.poster %>" alt="<%- movie.title_ru %>" title="<%- movie.title_ru %>">
+                                        <img src="<%- movie.poster %>" alt="<%- movie.title %>" title="<%- movie.title %>">
                                         <p style="text-align: justify">
                                             <%- movie.description %>
                                         </p>
@@ -90,7 +90,7 @@
                                 </div>
 
                                 <div class="seostronk" style="padding: 10px">
-                                    <h2>Смотреть онлайн <%- movie.title_ru %> <%- movie.year %> в хорошем качестве hd 720</h2>
+                                    <h2>Смотреть онлайн <%- movie.title %> <%- movie.year %> в хорошем качестве hd 720</h2>
                                 </div>
                                 <div class="menuSch" style="left: inherit; top: inherit;">
                                     <a href="<%- movie.url %>/<%- page.urls.movies.online %>">Онлайн</a>
@@ -154,9 +154,9 @@
                                     <% category.movies.forEach(function (movie) { %>
 
                                     <li>
-                                        <a href="<%- movie.url %>" class="brost" title="<%- movie.title_ru %> (<%- movie.year %>)">
-                                            <img src="<%- movie.poster %>" alt="<%- movie.title_ru %> (<%- movie.year %>)" style="height:170px; width:115px;">
-                                            <%- movie.title_ru %> (<%- movie.year %>)
+                                        <a href="<%- movie.url %>" class="brost" title="<%- movie.title %> (<%- movie.year %>)">
+                                            <img src="<%- movie.poster %>" alt="<%- movie.title %> (<%- movie.year %>)" style="height:170px; width:115px;">
+                                            <%- movie.title %> (<%- movie.year %>)
                                         </a>
                                     </li>
 

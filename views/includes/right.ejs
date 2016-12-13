@@ -12,7 +12,7 @@
                 <li class="msupdate_block_list_item">
                     <div class="msupdate_block_list_item_inner">
                         <div class="cell cell-1">
-                            <a class="msupdate_block_list_link" href="<%- movie.url %>"><%- movie.title_ru %></a> <span class="season"><%- movie.title_en %></span>
+                            <a class="msupdate_block_list_link" href="<%- movie.url %>"><%- movie.title %></a> <span class="season"><%- movie.title_en %></span>
                         </div>
                         <span class="cell cell-2"><%- movie.year %></span>
                     </div>
@@ -79,9 +79,9 @@
                 <% soon.movies.forEach(function (movie) { %>
 
                 <li>
-                    <a href="<%- movie.url %>" class="brost" title="<%- movie.title_ru %> (<%- movie.year %>)">
-                        <img class="ghost" src="<%- movie.poster %>" alt="<%- movie.title_ru %> (<%- movie.year %>)"/>
-                        <span><%- movie.title_ru %> (<%- movie.year %>)</span>
+                    <a href="<%- movie.url %>" class="brost" title="<%- movie.title %> (<%- movie.year %>)">
+                        <img class="ghost" src="<%- movie.poster %>" alt="<%- movie.title %> (<%- movie.year %>)"/>
+                        <span><%- movie.title %> (<%- movie.year %>)</span>
                     </a>
                 </li>
 

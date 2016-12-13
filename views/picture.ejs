@@ -26,7 +26,7 @@
 						</span> »
                         <span>
 							<a href="<%- movie.url %>">
-								<span><%- movie.title_ru %></span>
+								<span><%- movie.title %></span>
 							</a>
 						</span> »
                         Кадры
@@ -37,7 +37,7 @@
                     <div class="short_zombiz">
                         <div class="title-full">
                             <img src="/themes/ramsay/public/images/video-play.png" class="h2-title-short" alt="Онлайн">
-                            <h1>Кадры из <%- movie.title_ru %> <%- movie.year %></h1>
+                            <h1>Кадры из <%- movie.title %> <%- movie.year %></h1>
                         </div>
 
                         <% if (page.seo) { %>
@@ -88,9 +88,9 @@
                                     <% category.movies.forEach(function (movie) { %>
 
                                     <li>
-                                        <a href="<%- movie.url %>" class="brost" title="<%- movie.title_ru %> (<%- movie.year %>)">
-                                            <img src="<%- movie.poster %>" alt="<%- movie.title_ru %> (<%- movie.year %>)" style="height:170px; width:115px;">
-                                            <%- movie.title_ru %> (<%- movie.year %>)
+                                        <a href="<%- movie.url %>" class="brost" title="<%- movie.title %> (<%- movie.year %>)">
+                                            <img src="<%- movie.poster %>" alt="<%- movie.title %> (<%- movie.year %>)" style="height:170px; width:115px;">
+                                            <%- movie.title %> (<%- movie.year %>)
                                         </a>
                                     </li>
 
