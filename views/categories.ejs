@@ -25,6 +25,12 @@
                     </div>
                 </div>
 
+                <% if (typeof page.adv == 'object' && page.adv.top) { %>
+                <div style="text-align: center; margin: 10px auto;">
+                    <%- page.adv.top %>
+                </div>
+                <% } %>
+
                 <div class="short_zombiz">
                     <div class="short_podborki">
                         <div class="fullstory">
@@ -54,6 +60,12 @@
                         </div>
                     </div>
                 </div>
+
+                <% if (typeof page.adv == 'object' && page.adv.bottom) { %>
+                <div style="text-align: center; margin: 10px auto;">
+                    <%- page.adv.bottom %>
+                </div>
+                <% } %>
 
                 <% if (page.seo) { %>
 

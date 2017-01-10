@@ -16,6 +16,12 @@
 
                 <h1 style="padding:10px; text-align: center; background: #111; border-radius: 5px; margin: 5px;">Смотреть фильмы онлайн бесплатно в FullHD качестве</h1>
 
+                <% if (typeof page.adv == 'object' && page.adv.top) { %>
+                <div style="text-align: center; margin: 10px auto;">
+                    <%- page.adv.top %>
+                </div>
+                <% } %>
+
                 <% if (typeof movies == 'object') { for (var type in movies) { if (movies.hasOwnProperty(type)) { %>
 
                 <% if (movies[type].length) { %>
@@ -130,6 +136,12 @@
                 <% } %>
 
                 <% } } } %>
+
+                <% if (typeof page.adv == 'object' && page.adv.bottom) { %>
+                <div style="text-align: center; margin: 10px auto;">
+                    <%- page.adv.bottom %>
+                </div>
+                <% } %>
 
                 <% if (page.seo) { %>
 
