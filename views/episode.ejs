@@ -54,6 +54,12 @@
 
                         <% } %>
 
+                        <% if (typeof page.adv == 'object' && page.adv.over) { %>
+                        <div style="text-align: center; margin: 10px auto;">
+                            <%- page.adv.over %>
+                        </div>
+                        <% } %>
+
                         <div class="fullstory episodesListBlock" style="display: none;">
                             <h3><%- movie.title %> новые серии</h3>
                             <div id="episodesList" data-id="<%- movie.kp_id %>"></div>
@@ -91,6 +97,14 @@
                                 </div>
                             </div>
                             <div style="clear:both;"></div>
+
+                            <% if (typeof page.adv == 'object' && page.adv.under) { %>
+                            <div class="decription">
+                                <div class="decription-text" style="text-align: center">
+                                    <%- page.adv.under %>
+                                </div>
+                            </div>
+                            <% } %>
 
                             <% if (typeof movies == 'object') { for (var type in movies) { if (movies.hasOwnProperty(type)) { %>
 
