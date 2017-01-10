@@ -33,6 +33,12 @@
                     </div>
                 </div>
 
+                <% if (typeof page.adv == 'object' && page.adv.top) { %>
+                <div class="decription" style="text-align: center; border: 1px solid #101010; border-bottom: 0;">
+                    <%- page.adv.top %>
+                </div>
+                <% } %>
+
                 <div id="cinemapress-content">
                     <div class="short_zombiz">
                         <div class="title-full">
@@ -138,6 +144,13 @@
                         </div>
                         <div style="clear:both;"></div>
                     </div>
+
+                    <% if (typeof page.adv == 'object' && page.adv.bottom) { %>
+                    <div class="decription" style="text-align: center; border-right: 1px solid #101010;">
+                        <%- page.adv.bottom %>
+                    </div>
+                    <% } %>
+
                 </div>
 
             </div>
