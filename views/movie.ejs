@@ -95,15 +95,15 @@
                                     <div id="episodesList" data-id="<%- movie.kp_id %>"></div>
                                 </div>
 
-                                <div class="seostronk" style="padding: 10px">
-                                    <h2>Смотреть онлайн <%- movie.title %> <%- movie.year %> в хорошем качестве hd 720</h2>
-                                </div>
-
                                 <% if (typeof page.adv == 'object' && page.adv.over) { %>
                                 <div style="text-align: center; margin: 10px auto;">
                                     <%- page.adv.over %>
                                 </div>
                                 <% } %>
+
+                                <div class="seostronk" style="padding: 10px">
+                                    <h2>Смотреть онлайн <%- movie.title %> <%- movie.year %> в хорошем качестве hd 720</h2>
+                                </div>
 
                                 <div class="menuSch" style="left: inherit; top: inherit;">
                                     <a href="<%- movie.url %>/<%- page.urls.movies.online %>">Онлайн</a>
