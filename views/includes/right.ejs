@@ -69,6 +69,14 @@
             <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.director %>"><span>Все режиссеры</span></a></li>
         </ul>
 
+        <% if (typeof page.adv == 'object' && page.adv.right) { %>
+        <div style="clear: both"></div>
+        <div style="text-align: center; margin: 10px auto;">
+            <%- page.adv.right %>
+        </div>
+        <div style="clear: both"></div>
+        <% } %>
+
         <% if (typeof soon == 'object' && soon.movies.length) { %>
 
         <span class="left_blockb">Скоро</span><br>
@@ -90,13 +98,6 @@
             </ul>
         </div>
 
-        <% } %>
-
-        <% if (typeof page.adv == 'object' && page.adv.right) { %>
-        <div style="clear: both"></div>
-        <div style="text-align: center; margin: 10px auto;">
-            <%- page.adv.right %>
-        </div>
         <% } %>
 
     </div>
