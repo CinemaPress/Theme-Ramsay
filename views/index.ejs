@@ -129,24 +129,6 @@
 
                     <% } %>
 
-                    <div class="bot-left">
-                        <div class="bot-navigation">
-                            <% if (page.pagination.prev.length) { %>
-                            <% page.pagination.prev.slice(-6).forEach(function (prev) { %>
-                            <a href="<%- prev.link %>" rel="nofollow"><%- prev.number %></a>
-                            <% }); %>
-                            <span class="nav_ext">...</span>
-                            <% } %>
-                            <span><%- page.pagination.current %></span>
-                            <% if (page.pagination.next.length) { %>
-                            <span class="nav_ext">...</span>
-                            <% page.pagination.next.slice(0,6).forEach(function (next) { %>
-                            <a href="<%- next.link %>" rel="nofollow"><%- next.number %></a>
-                            <% }); %>
-                            <% } %>
-                        </div>
-                    </div>
-
                 </div>
 
                 <% }); %>
@@ -154,6 +136,28 @@
                 <% } %>
 
                 <% } } } %>
+
+                <div class="bot-left">
+                    <div class="bot-navigation">
+                        <% if (page.pagination.prev.length) { %>
+                        <% page.pagination.prev.slice(-6).forEach(function (prev) { %>
+                        <a href="<%- prev.link %>" rel="nofollow"><%- prev.number %></a>
+                        <% }); %>
+                        <span class="nav_ext">...</span>
+                        <% } %>
+                        <span><%- page.pagination.current %></span>
+                        <% if (page.pagination.next.length) { %>
+                        <span class="nav_ext">...</span>
+                        <% page.pagination.next.slice(0,6).forEach(function (next) { %>
+                        <a href="<%- next.link %>" rel="nofollow"><%- next.number %></a>
+                        <% }); %>
+                        <% } %>
+                        <% if (page.pagination.all) { %>
+                        <span class="nav_ext">...</span>
+                        <a href="<%- page.pagination.all.link %>" rel="nofollow"><%- page.pagination.all.number %></a>
+                        <% } %>
+                    </div>
+                </div>
 
                 <% if (typeof page.adv == 'object' && page.adv.bottom) { %>
                 <div class="decription" style="text-align: center; border-right: 1px solid #101010;">
