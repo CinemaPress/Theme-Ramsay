@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru-RU">
+<html lang="ru">
 <head>
 
     <% include includes/head.ejs %>
@@ -17,7 +17,7 @@
                 <div class="sbar">
                     <div class="speedbar">
 						<span>
-							<a href="<%- page.protocol %><%- page.domain %>">
+							<a href="/">
 								<span>Главная</span>
 							</a>
 						</span> »
@@ -25,7 +25,7 @@
                     </div>
                 </div>
 
-                <% if (typeof page.adv == 'object' && page.adv.top) { %>
+                <% if (typeof page.adv === 'object' && page.adv.top) { %>
                 <div class="decription" style="text-align: center; border: 1px solid #101010;">
                     <%- page.adv.top %>
                 </div>
@@ -38,22 +38,21 @@
 
                             <div class="collect-content">
 
-                                <% if (typeof categories == 'object' && categories.length) { %>
-
-                                <% categories.forEach(function (category) { %>
-
-                                <a href="<%- category.url %>" class="collect-block" target="_blank">
-									<span class="collect-title">
-										<img src="/themes/ramsay/public/images/video-play.png" alt="<%- category.name %>">
-										<span class="hyphenate"><%- category.name %></span>
-									</span>
-									<span class="collect-img-block">
-										<span class="collect-img" style="background: #000 url('<% if (category.image) { %><%- category.image %><% } else { %>https://st.kp.yandex.net/images/kadr/sm_2136182.jpg<% } %>') right top no-repeat"></span>
-									</span>
-                                </a>
-
+                                <% if (typeof categories === 'object' && categories.length) { %>
+                                <div style="clear: both"></div>
+                                <% categories.forEach(function (content) { %>
+                                <div style="float: left; width: 50%;">
+                                    <div style="margin: 0; padding: 10px">
+                                        <a href="<%- content.url %>" class="cinemapress-news">
+                                            <img src="<%- content.image %>" class="cinemapress-news-image" alt="<%- content.title %>">
+                                            <div class="cinemapress-news-title">
+                                                <%- content.title %>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
                                 <% }); %>
-
+                                <div style="clear: both"></div>
                                 <% } %>
 
                             </div>
@@ -61,7 +60,7 @@
                     </div>
                 </div>
 
-                <% if (typeof page.adv == 'object' && page.adv.bottom) { %>
+                <% if (typeof page.adv === 'object' && page.adv.bottom) { %>
                 <div class="decription" style="text-align: center; border-right: 1px solid #101010;">
                     <%- page.adv.bottom %>
                 </div>

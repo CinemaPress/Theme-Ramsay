@@ -1,13 +1,13 @@
-<div class="left_side" id="mMenu">
-    <div class="left_block">
+<div class="right_side" id="mMenu">
+    <div class="right_block">
 
-        <% if (typeof top == 'object' && top.movies.length) { %>
+        <% if (typeof top === 'object' && top.length) { %>
 
         <div class="msupdate_block">
-            <div class="msupdate_block_date"><%- top.name %></div>
+            <div class="msupdate_block_date">Топ</div>
             <ul class="msupdate_block_list">
 
-                <% top.movies.forEach(function (movie) { %>
+                <% top.forEach(function (movie) { %>
 
                 <li class="msupdate_block_list_item">
                     <div class="msupdate_block_list_item_inner">
@@ -26,50 +26,39 @@
         <% } %>
 
         <ul class="leftmenu mc2">
-            <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.year %>/2017"><span>Новинки кино</span></a></li>
-            <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.year %>/2016"><span>Фильмы 2016 года</span></a></li>
-            <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.year %>/2015"><span>Фильмы 2015 года</span></a></li>
-            <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.year %>/2014"><span>Фильмы 2014 года</span></a></li>
-            <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.year %>/2013"><span>Фильмы 2013 года</span></a></li>
+            <% page.urls.years.slice(0,5).forEach(function(genre) { %>
+            <li>
+                <a href="<%- genre.url %>">
+                    <span>Фильмы <%- genre.title %> года</span>
+                </a>
+            </li>
+            <% }); %>
         </ul>
         <div class="menugod">
-            <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.type %>/<%- page.urls.types.movie %>" class="menugo1d">Кино</a>
-            <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.collection %>" class="menugo2d">Подборки фильмов</a></div>
-        <span class="left_blockb">Категории</span><br/><br/>
+            <a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>" class="menugo1d">Кино</a>
+            <a href="/<%- page.urls.content %>?tag=Коллекция" class="menugo2d">Подборки фильмов</a>
+        </div>
         <nav>
             <ul class="leftmenu mc1">
-                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/триллер"><span>Триллеры</span></a></li>
-                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/приключения"><span>Приключения</span></a></li>
-                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/мультфильм"><span>Мультфильмы</span></a></li>
-                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/детектив"><span>Детективы</span></a></li>
-                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/вестерн"><span>Вестерны</span></a></li>
-                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/боевик"><span>Боевики</span></a></li>
-                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/ужасы"><span>Ужасы</span></a></li>
-                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/комедия"><span>Комедии</span></a></li>
-                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/криминал"><span>Криминал</span></a></li>
-                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/мюзикл"><span>Мюзиклы</span></a></li>
-                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/короткометражка"><span>Короткометражки</span></a></li>
-                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/история"><span>Исторические</span></a></li>
-                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/документальный"><span>Документальные</span></a></li>
-                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/спорт"><span>Спорт</span></a></li>
-                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/мелодрама"><span>Мелодрамы</span></a></li>
-                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/драма"><span>Драмы</span></a></li>
-                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/биография"> <span>Биография</span></a></li>
-                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/военный"><span>Военные</span></a></li>
-                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/фантастика"><span>Фантастика</span></a></li>
-                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/фэнтези"><span>Фэнтези</span></a></li>
+                <% page.urls.genres.forEach(function(genre) { %>
+                <li>
+                    <a href="<%- genre.url %>">
+                        <span><%- genre.title %></span>
+                    </a>
+                </li>
+                <% }); %>
             </ul>
         </nav>
 
         <ul class="leftmenu mc2">
-            <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.year %>"><span>Все годы</span></a></li>
-            <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>"><span>Все жанры</span></a></li>
-            <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.country %>"><span>Все страны</span></a></li>
-            <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.actor %>"><span>Все актеры</span></a></li>
-            <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.director %>"><span>Все режиссеры</span></a></li>
+            <li><a href="/<%- page.urls.year %>"><span>Все годы</span></a></li>
+            <li><a href="/<%- page.urls.genre %>"><span>Все жанры</span></a></li>
+            <li><a href="/<%- page.urls.country %>"><span>Все страны</span></a></li>
+            <li><a href="/<%- page.urls.actor %>"><span>Все актеры</span></a></li>
+            <li><a href="/<%- page.urls.director %>"><span>Все режиссеры</span></a></li>
         </ul>
 
-        <% if (typeof page.adv == 'object' && page.adv.right) { %>
+        <% if (typeof page.adv === 'object' && page.adv.right) { %>
         <div style="clear: both"></div>
         <div style="text-align: center; margin: 10px auto;">
             <%- page.adv.right %>
@@ -77,14 +66,14 @@
         <div style="clear: both"></div>
         <% } %>
 
-        <% if (typeof soon == 'object' && soon.movies.length) { %>
+        <% if (typeof soon === 'object' && soon.length) { %>
 
-        <span class="left_blockb">Скоро</span><br>
+        <span class="right_blockb">Скоро</span><br>
         <span class="bold-t">на сайте</span><br>
         <div class="slideserbox">
             <ul id="slides4">
 
-                <% soon.movies.forEach(function (movie) { %>
+                <% soon.forEach(function (movie) { %>
 
                 <li>
                     <a href="<%- movie.url %>" class="brost" title="<%- movie.title %> (<%- movie.year %>)">
@@ -98,6 +87,54 @@
             </ul>
         </div>
 
+        <% } %>
+
+        <% if (typeof news === 'object' && news.length) { %>
+        <% news.forEach(function (content) { %>
+        <div style="float: left; width: 100%;">
+            <div style="margin: 10px 0; padding: 0">
+                <a href="<%- content.url %>" class="cinemapress-news">
+                    <img src="<%- content.image %>" class="cinemapress-news-image" alt="<%- content.title %>">
+                    <div class="cinemapress-news-title">
+                        <%- content.title %>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <% }); %>
+        <% } %>
+
+        <% if (typeof recent === 'object' && recent.length) { %>
+        <% recent.forEach(function (comment) { %>
+        <div style="float: left; width: 100%;">
+            <div class="cinemapress-recent">
+                <div class="cinemapress-recent-head">
+                    <% if (comment.avatar) { %>
+                    <div class="cinemapress-recent-head-avatar">
+                        <img src="<%- comment.avatar %>" alt="<%- comment.user %>">
+                    </div>
+                    <% } %>
+                    <div class="cinemapress-recent-head-meta">
+                        <div>
+                            <a href="<%- comment.url %>"><%- comment.title %></a>
+                        </div>
+                        <div>
+                            <span>
+                                <%- comment.user %>
+                            </span><span>
+                                сказал(а)
+                            </span><span>
+                                <%- comment.date %>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cinemapress-recent-comment">
+                    <%- comment.comment %>
+                </div>
+            </div>
+        </div>
+        <% }); %>
         <% } %>
 
     </div>

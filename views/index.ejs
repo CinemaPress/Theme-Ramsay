@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru-RU">
+<html lang="ru">
 <head>
 
     <% include includes/head.ejs %>
@@ -16,17 +16,17 @@
 
                 <h1 style="padding:10px; text-align: center; background: #111; border-radius: 5px; margin: 5px;">Смотреть фильмы онлайн бесплатно в FullHD качестве</h1>
 
-                <% if (typeof page.adv == 'object' && page.adv.top) { %>
+                <% if (typeof page.adv === 'object' && page.adv.top) { %>
                 <div class="decription" style="text-align: center; border: 1px solid #101010;">
                     <%- page.adv.top %>
                 </div>
                 <% } %>
 
-                <% if (typeof movies == 'object') { for (var type in movies) { if (movies.hasOwnProperty(type)) { %>
+                <% if (typeof index === 'object') { for (var type in index) { if (index.hasOwnProperty(type)) { %>
 
-                <% if (movies[type].length) { %>
+                <% if (index[type].length) { %>
 
-                <% movies[type].forEach(function (category) { %>
+                <% index[type].forEach(function (category) { %>
 
                 <div class="sort">
 
@@ -44,7 +44,7 @@
                         <div class="short_story">
                             <div class="title">
                                 <img src="/themes/ramsay/public/images/video-play.png" class="h2-title-short" alt="Онлайн">
-                                <h3><a href="<%- movie.url %>"><%- movie.title %> (<% if (movie.season && movie.episode) { %><%- movie.season %> сезон <%- movie.episode %> серия <% if (movie.translate) { %><%- movie.translate %><% } %><% } else { %><%- movie.year %><% } %>)</a></h3>
+                                <h3><a href="<%- movie.url %>"><%- movie.title %> (<% if (movie.season && movie.episode) { %><%- movie.season %> сезон <%- movie.episode %> серия<% } else { %><%- movie.year %><% } %>)</a></h3>
                             </div>
                             <div class="short_img2">
                                 <div class="short_img2-layout">
@@ -52,10 +52,20 @@
                                         <ul class="caption-style-4">
                                             <li>
                                                 <a href="<%- movie.url %>" title="<%- movie.title %>">
-                                                    <img src="<%- movie.poster %>" alt="<%- movie.title %> (<%- movie.year %>)" title="<%- movie.title %> (<%- movie.year %>)" class="okrug">
-                                                    <div class="caption">
-                                                        <div class="blur"></div>
-                                                        <div class="caption-text"></div>
+                                                    <div class="cinemapress-poster">
+                                                        <img src="<%- movie.poster %>" alt="<%- movie.title %> (<%- movie.year %>)" title="<%- movie.title %> (<%- movie.year %>)" class="okrug">
+                                                        <% if (movie.quality) { %>
+                                                        <div class="cinemapress-quality">
+                                                            <span class="cinemapress-svg-quality" style="padding-top: 7px !important;"></span>
+                                                            <%- movie.quality %>
+                                                        </div>
+                                                        <% } %>
+                                                        <% if (movie.translate) { %>
+                                                        <div class="cinemapress-translate">
+                                                            <span class="cinemapress-svg-translate" style="padding-top: 7px !important;"></span>
+                                                            <%- movie.translate %>
+                                                        </div>
+                                                        <% } %>
                                                     </div>
                                                 </a>
                                             </li>
@@ -137,10 +147,15 @@
 
                 <% } } } %>
 
+                <% if (typeof page.pagination === 'object') { %>
                 <div class="bot-left">
                     <div class="bot-navigation">
+                        <% if (page.pagination.first) { %>
+                        <a href="<%- page.pagination.first.link %>" rel="nofollow"><%- page.pagination.first.number %></a>
+                        <span class="nav_ext">...</span>
+                        <% } %>
                         <% if (page.pagination.prev.length) { %>
-                        <% page.pagination.prev.slice(-6).forEach(function (prev) { %>
+                        <% page.pagination.prev.forEach(function (prev) { %>
                         <a href="<%- prev.link %>" rel="nofollow"><%- prev.number %></a>
                         <% }); %>
                         <span class="nav_ext">...</span>
@@ -148,18 +163,19 @@
                         <span><%- page.pagination.current %></span>
                         <% if (page.pagination.next.length) { %>
                         <span class="nav_ext">...</span>
-                        <% page.pagination.next.slice(0,6).forEach(function (next) { %>
+                        <% page.pagination.next.forEach(function (next) { %>
                         <a href="<%- next.link %>" rel="nofollow"><%- next.number %></a>
                         <% }); %>
                         <% } %>
-                        <% if (page.pagination.all) { %>
+                        <% if (page.pagination.last) { %>
                         <span class="nav_ext">...</span>
-                        <a href="<%- page.pagination.all.link %>" rel="nofollow"><%- page.pagination.all.number %></a>
+                        <a href="<%- page.pagination.last.link %>" rel="nofollow"><%- page.pagination.last.number %></a>
                         <% } %>
                     </div>
                 </div>
+                <% } %>
 
-                <% if (typeof page.adv == 'object' && page.adv.bottom) { %>
+                <% if (typeof page.adv === 'object' && page.adv.bottom) { %>
                 <div class="decription" style="text-align: center; border-right: 1px solid #101010;">
                     <%- page.adv.bottom %>
                 </div>
