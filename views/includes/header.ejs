@@ -2,8 +2,10 @@
     <div class="header">
         <div class="menuSch">
             <a href="/" class="red"><b>Главная</b></a>
-            <a href="/<%- page.urls.year %>/2017" class="fiolet"><b>Новинки 2017</b></a>
-            <a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>">Фильмы в <b>HD</b></a>
+            <% page.urls.years.slice(0,1).forEach(function(year) { %>
+            <a href="<%- year.url %>" class="fiolet"><b>Новинки <%- year.title %></b></a>
+            <% }); %>
+            <a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>">Фильмы</a>
             <a href="/<%- page.urls.type %>/<%- page.urls.types.serial %>"><b>Сериалы</b></a>
         </div>
 

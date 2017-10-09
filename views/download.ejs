@@ -69,10 +69,18 @@
 
                         <div class="fullstory">
                             <div class="menuSch" style="left: inherit; top: inherit;">
+                                <% if (page.urls.movies.online) { %>
                                 <a href="<%- movie.url %>/<%- page.urls.movies.online %>">Онлайн</a>
+                                <% } %>
+                                <% if (page.urls.movies.download) { %>
                                 <a href="<%- movie.url %>/<%- page.urls.movies.download %>" class="red"><strong>Скачать</strong></a>
+                                <% } %>
+                                <% if (page.urls.movies.trailer) { %>
                                 <a href="<%- movie.url %>/<%- page.urls.movies.trailer %>">Трейлер</a>
+                                <% } %>
+                                <% if (page.urls.movies.picture) { %>
                                 <a href="<%- movie.url %>/<%- page.urls.movies.picture %>">Кадры</a>
+                                <% } %>
                             </div>
                             <div class="nomt">
                                 <div style="margin: 30px auto">

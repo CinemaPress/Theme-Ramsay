@@ -26,10 +26,10 @@
         <% } %>
 
         <ul class="leftmenu mc2">
-            <% page.urls.years.slice(0,5).forEach(function(genre) { %>
+            <% page.urls.years.slice(0,5).forEach(function(year) { %>
             <li>
-                <a href="<%- genre.url %>">
-                    <span>Фильмы <%- genre.title %> года</span>
+                <a href="<%- year.url %>">
+                    <span>Фильмы <%- year.title %> года</span>
                 </a>
             </li>
             <% }); %>

@@ -39,13 +39,13 @@
                 <div id="cinemapress-content">
                     <div class="short_zombiz">
                         <div class="title-full">
-                            <img src="/themes/ramsay/public/images/video-play.png" class="h2-title-short" alt="Онлайн">
-                            <h1><%- movie.title %> (<%- movie.year %>) смотреть онлайн</h1>
+                            <img src="/themes/ramsay/public/images/video-play.png" class="h2-title-short" alt="<%- movie.title %>">
+                            <h1><%- movie.title %> (<%- movie.year %>)</h1>
                         </div>
                         <div class="fullstory">
                             <div style="margin-top: 286px;" class="nomt">
                                 <div style="clear:both;"></div>
-                                <div class="vozmojnosti">Важно! <i><b>Теперь данный фильм доступен онлайн на телефоне и планшете.</b></i></div>
+                                <div class="vozmojnosti">Важно! <i><b>Если Вы посмотрели эту ленту, не пишите спойлеры в комментариях.</b></i></div>
                                 <div>
                                     <div class="short_img">
                                         <img src="<%- movie.poster %>" alt="<%- movie.title %>" title="<%- movie.title %>">
@@ -114,14 +114,22 @@
                                 <% } %>
 
                                 <div class="seostronk" style="padding: 10px">
-                                    <h2>Смотреть онлайн <%- movie.title %> <%- movie.year %> в хорошем качестве hd 720</h2>
+                                    <h2><%- movie.title %> <%- movie.year %></h2>
                                 </div>
 
                                 <div class="menuSch" style="left: inherit; top: inherit;">
+                                    <% if (page.urls.movies.online) { %>
                                     <a href="<%- movie.url %>/<%- page.urls.movies.online %>">Онлайн</a>
+                                    <% } %>
+                                    <% if (page.urls.movies.download) { %>
                                     <a href="<%- movie.url %>/<%- page.urls.movies.download %>">Скачать</a>
+                                    <% } %>
+                                    <% if (page.urls.movies.trailer) { %>
                                     <a href="<%- movie.url %>/<%- page.urls.movies.trailer %>">Трейлер</a>
+                                    <% } %>
+                                    <% if (page.urls.movies.picture) { %>
                                     <a href="<%- movie.url %>/<%- page.urls.movies.picture %>">Кадры</a>
+                                    <% } %>
                                 </div>
                                 <div style="margin: 30px auto 0 auto">
                                     <div style="width: 100%; height: 370px; position: relative;">
