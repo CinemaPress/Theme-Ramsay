@@ -93,16 +93,16 @@
                         <div class="short_story">
                             <div class="title">
                                 <img src="/themes/ramsay/public/images/video-play.png" class="h2-title-short" alt="Онлайн">
-                                <h2><a href="<%- movie.url %>"><%- movie.title %> (<%- movie.year %>)</a></h2>
+                                <h2><a href="<%- movie.url %>"><%= movie.title %> (<%- movie.year %>)</a></h2>
                             </div>
                             <div class="short_img2">
                                 <div class="short_img2-layout">
                                     <div class="container-a4">
                                         <ul class="caption-style-4">
                                             <li>
-                                                <a href="<%- movie.url %>" title="<%- movie.title %>">
+                                                <a href="<%- movie.url %>" title="<%= movie.title %>">
                                                     <div class="cinemapress-poster">
-                                                        <img src="<%- movie.poster %>" alt="<%- movie.title %> (<%- movie.year %>)" title="<%- movie.title %> (<%- movie.year %>)" class="okrug">
+                                                        <img src="<%- movie.poster %>" alt="<%= movie.title %> (<%- movie.year %>)" title="<%= movie.title %> (<%- movie.year %>)" class="okrug">
                                                         <% if (movie.quality) { %>
                                                         <div class="cinemapress-quality">
                                                             <span class="cinemapress-svg-quality" style="padding-top: 7px !important;"></span>

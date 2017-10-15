@@ -28,7 +28,7 @@
                         <% } %>
                         <span>
 							<a href="<%- movie.url %>">
-								<span><%- movie.title %></span>
+								<span><%= movie.title %></span>
 							</a>
 						</span> »
                         Кинозал
@@ -45,7 +45,7 @@
                     <div class="short_zombiz">
                         <div class="title-full">
                             <img src="/themes/ramsay/public/images/video-play.png" class="h2-title-short" alt="Онлайн">
-                            <h1>Смотреть онлайн <%- movie.title %> <%- movie.year %> в хорошем качестве hd 720</h1>
+                            <h1>Смотреть онлайн <%= movie.title %> <%- movie.year %> в хорошем качестве hd 720</h1>
                         </div>
 
                         <% if (page.seo) { %>
@@ -61,7 +61,7 @@
                         <% } %>
 
                         <div class="fullstory episodesListBlock" style="display: none;">
-                            <h3><%- movie.title %> новые серии</h3>
+                            <h3><%= movie.title %> новые серии</h3>
                             <div id="episodesList" data-id="<%- movie.kp_id %>"></div>
                         </div>
 
@@ -143,9 +143,9 @@
                                     <% if (category.movies.length) {
                                     category.movies.forEach(function (movie) { %>
                                     <li>
-                                        <a href="<%- movie.url %>" class="brost" title="<%- movie.title %> (<%- movie.year %>)">
-                                            <img src="<%- movie.poster %>" alt="<%- movie.title %> (<%- movie.year %>)" style="height:170px; width:115px;">
-                                            <%- movie.title %> (<%- movie.year %>)
+                                        <a href="<%- movie.url %>" class="brost" title="<%= movie.title %> (<%- movie.year %>)">
+                                            <img src="<%- movie.poster %>" alt="<%= movie.title %> (<%- movie.year %>)" style="height:170px; width:115px;">
+                                            <%= movie.title %> (<%- movie.year %>)
                                         </a>
                                     </li>
                                     <% }); } %>
