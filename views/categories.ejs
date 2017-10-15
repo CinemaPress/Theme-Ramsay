@@ -21,7 +21,7 @@
 								<span>Главная</span>
 							</a>
 						</span> »
-                        <%- page.title %>
+                        <%= page.title %>
                     </div>
                 </div>
 
@@ -34,7 +34,7 @@
                 <div class="short_zombiz">
                     <div class="short_podborki">
                         <div class="fullstory">
-                            <h1><%- page.title %></h1>
+                            <h1><%= page.title %></h1>
 
                             <div class="collect-content">
 
@@ -44,9 +44,9 @@
                                 <div style="float: left; width: 50%;">
                                     <div style="margin: 0; padding: 10px">
                                         <a href="<%- content.url %>" class="cinemapress-news">
-                                            <img src="<%- content.image %>" class="cinemapress-news-image" alt="<%- content.title %>">
+                                            <img src="<%- content.image %>" class="cinemapress-news-image" alt="<%= content.title %>">
                                             <div class="cinemapress-news-title">
-                                                <%- content.title %>
+                                                <%= content.title %>
                                             </div>
                                         </a>
                                     </div>

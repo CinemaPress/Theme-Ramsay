@@ -94,9 +94,9 @@
         <div style="float: left; width: 100%;">
             <div style="margin: 10px 0; padding: 0">
                 <a href="<%- content.url %>" class="cinemapress-news">
-                    <img src="<%- content.image %>" class="cinemapress-news-image" alt="<%- content.title %>">
+                    <img src="<%- content.image %>" class="cinemapress-news-image" alt="<%= content.title %>">
                     <div class="cinemapress-news-title">
-                        <%- content.title %>
+                        <%= content.title %>
                     </div>
                 </a>
             </div>
@@ -116,7 +116,7 @@
                     <% } %>
                     <div class="cinemapress-recent-head-meta">
                         <div>
-                            <a href="<%- comment.url %>"><%- comment.title %></a>
+                            <a href="<%- comment.url %>"><%= comment.title %></a>
                         </div>
                         <div>
                             <span>
