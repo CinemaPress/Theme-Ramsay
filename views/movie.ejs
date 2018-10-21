@@ -18,7 +18,7 @@
                     <div class="speedbar">
 						<span>
 							<a href="/">
-								<span>Главная</span>
+								<span><%- page.l.home %></span>
 							</a>
 						</span> »
                         <% if (movie.genre_url) { %>
@@ -40,15 +40,15 @@
                     <div class="short_zombiz">
                         <div class="title-full">
                             <img src="/themes/ramsay/public/images/video-play.png" class="h2-title-short" alt="<%= movie.title %>">
-                            <h1><%= movie.title %> (<%- movie.year %>)</h1>
+                            <h1><%- page.h1 %></h1>
                         </div>
                         <div class="fullstory">
                             <div style="margin-top: 286px;" class="nomt">
                                 <div style="clear:both;"></div>
-                                <div class="vozmojnosti">Важно! <i><b>Если Вы посмотрели эту ленту, не пишите спойлеры в комментариях.</b></i></div>
+                                <div class="vozmojnosti"><i><strong><%- page.title %></strong></i></div>
                                 <div>
                                     <div class="short_img">
-                                        <img src="<%- movie.poster %>" alt="<%= movie.title %>" title="<%= movie.title %>">
+                                        <img src="<%- movie.poster %>" alt="<%= page.title %>" title="<%= page.title %>" id="cinemapress-poster">
                                         <p style="text-align: justify">
                                             <%- movie.description %>
                                         </p>
@@ -56,54 +56,54 @@
                                     <div class="full_details">
                                         <% if (movie.year_url) { %>
                                         <div style="margin-bottom: 5px">
-                                            <span class="bold">Год:</span> <%- movie.year_url %>
+                                            <span class="bold"><%- page.l.year %>:</span> <%- movie.year_url %>
                                         </div>
                                         <% } %>
                                         <% if (movie.countries_url) { %>
                                         <div style="margin-bottom: 5px">
-                                            <span class="bold">Страна:</span> <%- movie.countries_url %>
+                                            <span class="bold"><%- page.l.countries %>:</span> <%- movie.countries_url %>
                                         </div>
                                         <% } %>
                                         <% if (movie.genres_url) { %>
                                         <div style="margin-bottom: 5px">
-                                            <span class="bold">Жанр:</span> <%- movie.genres_url %>
+                                            <span class="bold"><%- page.l.genres %>:</span> <%- movie.genres_url %>
                                         </div>
                                         <% } %>
                                         <% if (movie.directors_url) { %>
                                         <div style="margin-bottom: 5px">
-                                            <span class="bold">Режиссер:</span> <%- movie.directors_url %>
+                                            <span class="bold"><%- page.l.directors %>:</span> <%- movie.directors_url %>
                                         </div>
                                         <% } %>
                                         <% if (movie.actors_url) { %>
                                         <div style="margin-bottom: 5px">
-                                            <span class="bold">Актеры:</span> <%- movie.actors_url %>
+                                            <span class="bold"><%- page.l.actors %>:</span> <%- movie.actors_url %>
                                         </div>
                                         <% } %>
                                         <% if (movie.kp_rating) { %>
                                         <div style="margin-bottom: 5px">
-                                            <span class="bold" style="color: #F29420">КиноПоиск:</span> <%- movie.kp_rating/10 %> (<%- movie.kp_vote %> голосов)
+                                            <span class="bold" style="color: #F29420"><%- page.l.kp %>:</span> <%- movie.kp_rating/10 %> (<%- movie.kp_vote %> <%- page.l.votes %>)
                                         </div>
                                         <% } %>
                                         <% if (movie.imdb_rating) { %>
                                         <div style="margin-bottom: 5px">
-                                            <span class="bold" style="color: #E4AD2C">IMDb:</span> <%- movie.imdb_rating/10 %> (<%- movie.imdb_vote %> голосов)
+                                            <span class="bold" style="color: #E4AD2C"><%- page.l.imdb %>:</span> <%- movie.imdb_rating/10 %> (<%- movie.imdb_vote %> <%- page.l.votes %>)
                                         </div>
                                         <% } %>
                                         <% if (movie.quality) { %>
                                         <div style="margin-bottom: 5px">
-                                            <span class="bold">Качество:</span> <%- movie.quality %>
+                                            <span class="bold"><%- page.l.quality %>:</span> <%- movie.quality %>
                                         </div>
                                         <% } %>
                                         <% if (movie.translate) { %>
                                         <div style="margin-bottom: 5px">
-                                            <span class="bold">Перевод:</span> <%- movie.translate %>
+                                            <span class="bold"><%- page.l.translate %>:</span> <%- movie.translate %>
                                         </div>
                                         <% } %>
                                     </div>
                                 </div>
 
                                 <div class="episodesListBlock" style="display: none; margin: 10px auto;">
-                                    <h3><%= movie.title %> новые серии</h3>
+                                    <h3><%= movie.title %> <%- page.l.episodes %></h3>
                                     <div id="episodesList" data-id="<%- movie.kp_id %>"></div>
                                 </div>
 
@@ -119,16 +119,16 @@
 
                                 <div class="menuSch" style="left: inherit; top: inherit;">
                                     <% if (page.urls.movies.online) { %>
-                                    <a href="<%- movie.url %>/<%- page.urls.movies.online %>">Онлайн</a>
+                                    <a href="<%- movie.url %>/<%- page.urls.movies.online %>"><%- page.l.online %></a>
                                     <% } %>
                                     <% if (page.urls.movies.download) { %>
-                                    <a href="<%- movie.url %>/<%- page.urls.movies.download %>">Скачать</a>
+                                    <a href="<%- movie.url %>/<%- page.urls.movies.download %>"><%- page.l.download %></a>
                                     <% } %>
                                     <% if (page.urls.movies.trailer) { %>
-                                    <a href="<%- movie.url %>/<%- page.urls.movies.trailer %>">Трейлер</a>
+                                    <a href="<%- movie.url %>/<%- page.urls.movies.trailer %>"><%- page.l.trailer %></a>
                                     <% } %>
                                     <% if (page.urls.movies.picture) { %>
-                                    <a href="<%- movie.url %>/<%- page.urls.movies.picture %>">Кадры</a>
+                                    <a href="<%- movie.url %>/<%- page.urls.movies.picture %>"><%- page.l.picture %></a>
                                     <% } %>
                                 </div>
                                 <div style="margin: 30px auto 0 auto">
@@ -147,12 +147,12 @@
                                             </ul>
                                         </div>
                                         <div class="rating-b">
-                                            <%- movie.rating/10 %> / 10 (<span><%- movie.vote %></span> чел.)
+                                            <%- movie.rating/10 %> / 10 (<span><%- movie.vote %></span> <%- page.l.votes %>)
                                         </div>
                                     </div>
                                     <% } %>
                                     <div class="share-right">
-                                        <a href="javascript:void(0)" id="watchLater" class="send-admin">Досмотреть позже</a>
+                                        <a href="javascript:void(0)" id="watchLater" class="send-admin"><%- page.l.later %></a>
                                     </div>
                                 </div>
                             </div>

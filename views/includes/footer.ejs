@@ -1,5 +1,5 @@
 <div class="decription recentlyViewedBlock" style="display: none;">
-    <div>Вы надавно смотрели:</div>
+    <div><%- page.l.watched %>:</div>
     <div id="recentlyViewed"></div>
 </div>
 
@@ -8,16 +8,16 @@
         <span style="color: #ccc;">
             <strong>
                 &copy;&nbsp;<%- new Date().getFullYear() %>&nbsp;<a href="https://cinemapress.org" target="_blank">CinemaPress&nbsp;ACMS</a>
-            </strong> | Для связи с администрацией <span id="mylo">Activate JS</span><script>(function(d,i,l,r){d.getElementById(i).innerHTML=l+'@'+r;})(window.document,'mylo','<%- page.email.split('@')[0] %>','<%- page.email.split('@')[1] %>');</script>
+            </strong> | Email <span id="mylo">Activate JS</span><script>(function(d,i,l,r){d.getElementById(i).innerHTML=l+'@'+r;})(window.document,'mylo','<%- page.email.split('@')[0] %>','<%- page.email.split('@')[1] %>');</script>
         </span>
         <% if (page.social) { %>
         <span class="copyright">
-            <% if (page.social.vk) { %><a href="<%- page.social.vk %>" target="_blank">ВК</a><% } %>
+            <% if (page.social.vk) { %><a href="<%- page.social.vk %>" target="_blank"><%- page.l.vk %></a><% } %>
             <% if (page.social.facebook) { %><span> | </span><a href="<%- page.social.facebook %>" target="_blank">facebook</a><% } %>
             <% if (page.social.twitter) { %><span> | </span><a href="<%- page.social.twitter %>" target="_blank">twitter</a><% } %>
             <% if (page.social.gplus) { %><span> | </span><a href="<%- page.social.gplus %>" target="_blank">G+</a><% } %>
-            <% if (page.social.youtube) { %><span> | </span><a href="<%- page.social.youtube %>" target="_blank">YouTube</a><% } %>
-            <% if (page.social.instagram) { %><span> | </span><a href="<%- page.social.instagram %>" target="_blank">Instagram</a><% } %>
+            <% if (page.social.youtube) { %><span> | </span><a href="<%- page.social.youtube %>" target="_blank"><%- page.l.youtube %></a><% } %>
+            <% if (page.social.instagram) { %><span> | </span><a href="<%- page.social.instagram %>" target="_blank"><%- page.l.instagram %></a><% } %>
         </span>
         <% } %>
     </div>
@@ -27,7 +27,7 @@
     <script src="/themes/default/public/desktop/js/yastatic.net/es5-shims.min.js"></script>
     <script src="/themes/default/public/desktop/js/yastatic.net/share2.js"></script>
 
-    <div id="scroller" class="b-top" style="display: none;"><span class="b-top-but">Наверх</span></div>
+    <div id="scroller" class="b-top" style="display: none;"><span class="b-top-but"><%- page.l.up %></span></div>
 </footer>
 
 <%- page.codes.footer %>

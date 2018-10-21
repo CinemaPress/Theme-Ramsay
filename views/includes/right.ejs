@@ -4,7 +4,7 @@
         <% if (typeof top === 'object' && top.length) { %>
 
         <div class="msupdate_block">
-            <div class="msupdate_block_date">Топ</div>
+            <div class="msupdate_block_date"><%- page.l.top %></div>
             <ul class="msupdate_block_list">
 
                 <% top.forEach(function (movie) { %>
@@ -29,14 +29,14 @@
             <% page.urls.years.slice(0,5).forEach(function(year) { %>
             <li>
                 <a href="<%- year.url %>">
-                    <span>Фильмы <%- year.title %> года</span>
+                    <span><%- page.l.movies %> <%- year.title %></span>
                 </a>
             </li>
             <% }); %>
         </ul>
         <div class="menugod">
-            <a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>" class="menugo1d">Кино</a>
-            <a href="/<%- page.urls.content %>?tag=Коллекция" class="menugo2d">Подборки фильмов</a>
+            <a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>" class="menugo1d"><%- page.l.movies %></a>
+            <a href="/<%- page.urls.content %>?tag=<%- page.l.collections %>" class="menugo2d"><%- page.l.collections %></a>
         </div>
         <nav>
             <ul class="leftmenu mc1">
@@ -51,11 +51,11 @@
         </nav>
 
         <ul class="leftmenu mc2">
-            <li><a href="/<%- page.urls.year %>"><span>Все годы</span></a></li>
-            <li><a href="/<%- page.urls.genre %>"><span>Все жанры</span></a></li>
-            <li><a href="/<%- page.urls.country %>"><span>Все страны</span></a></li>
-            <li><a href="/<%- page.urls.actor %>"><span>Все актеры</span></a></li>
-            <li><a href="/<%- page.urls.director %>"><span>Все режиссеры</span></a></li>
+            <li><a href="/<%- page.urls.year %>"><span><%- page.l.allYears %></span></a></li>
+            <li><a href="/<%- page.urls.genre %>"><span><%- page.l.allGenres %></span></a></li>
+            <li><a href="/<%- page.urls.country %>"><span><%- page.l.allCountries %></span></a></li>
+            <li><a href="/<%- page.urls.actor %>"><span><%- page.l.allActors %></span></a></li>
+            <li><a href="/<%- page.urls.director %>"><span><%- page.l.allDirectors %></span></a></li>
         </ul>
 
         <% if (typeof page.adv === 'object' && page.adv.right) { %>
@@ -68,8 +68,8 @@
 
         <% if (typeof soon === 'object' && soon.length) { %>
 
-        <span class="right_blockb">Скоро</span><br>
-        <span class="bold-t">на сайте</span><br>
+        <span class="right_blockb"><%- page.l.soon.split(' ')[0] || '' %></span><br>
+        <span class="bold-t"><%- page.l.soon.split(' ')[1] || '' %></span><br>
         <div class="slideserbox">
             <ul id="slides4">
 
@@ -121,7 +121,7 @@
                             <span>
                                 <%- comment.user %>
                             </span><span>
-                                сказал(а)
+                                <%- page.l.said %>
                             </span><span>
                                 <%- comment.date %>
                             </span>

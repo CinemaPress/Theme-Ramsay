@@ -18,7 +18,7 @@
                     <div class="speedbar">
 						<span>
 							<a href="/">
-								<span>Главная</span>
+								<span><%- page.l.home %></span>
 							</a>
 						</span> »
                         <% if (movie.genre_url) { %>
@@ -31,7 +31,7 @@
 								<span><%= movie.title %></span>
 							</a>
 						</span> »
-                        Смотреть трейлер
+                        <%- page.l.trailer %>
                     </div>
                 </div>
 
@@ -44,8 +44,8 @@
                 <div id="cinemapress-content">
                     <div class="short_zombiz">
                         <div class="title-full">
-                            <img src="/themes/ramsay/public/images/video-play.png" class="h2-title-short" alt="Онлайн">
-                            <h1>Смотреть трейлер <%= movie.title %> <%- movie.year %> на русском языке</h1>
+                            <img src="/themes/ramsay/public/images/video-play.png" class="h2-title-short" alt="<%- page.l.online %>">
+                            <h1><%- page.h1 %></h1>
                         </div>
 
                         <% if (page.seo) { %>
@@ -61,23 +61,23 @@
                         <% } %>
 
                         <div class="fullstory episodesListBlock" style="display: none;">
-                            <h3><%= movie.title %> новые серии</h3>
+                            <h3><%= movie.title %> <%- page.l.episodes %></h3>
                             <div id="episodesList" data-id="<%- movie.kp_id %>"></div>
                         </div>
 
                         <div class="fullstory">
                             <div class="menuSch" style="left: inherit; top: inherit;">
                                 <% if (page.urls.movies.online) { %>
-                                <a href="<%- movie.url %>/<%- page.urls.movies.online %>">Онлайн</a>
+                                <a href="<%- movie.url %>/<%- page.urls.movies.online %>"><%- page.l.online %></a>
                                 <% } %>
                                 <% if (page.urls.movies.download) { %>
-                                <a href="<%- movie.url %>/<%- page.urls.movies.download %>">Скачать</a>
+                                <a href="<%- movie.url %>/<%- page.urls.movies.download %>"><%- page.l.download %></a>
                                 <% } %>
                                 <% if (page.urls.movies.trailer) { %>
-                                <a href="<%- movie.url %>/<%- page.urls.movies.trailer %>" class="red"><strong>Трейлер</strong></a>
+                                <a href="<%- movie.url %>/<%- page.urls.movies.trailer %>" class="red"><strong><%- page.l.trailer %></strong></a>
                                 <% } %>
                                 <% if (page.urls.movies.picture) { %>
-                                <a href="<%- movie.url %>/<%- page.urls.movies.picture %>">Кадры</a>
+                                <a href="<%- movie.url %>/<%- page.urls.movies.picture %>"><%- page.l.picture %></a>
                                 <% } %>
                             </div>
                             <div class="nomt">

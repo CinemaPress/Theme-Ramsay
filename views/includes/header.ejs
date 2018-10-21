@@ -1,12 +1,12 @@
 <header>
     <div class="header">
         <div class="menuSch">
-            <a href="/" class="red"><b>Главная</b></a>
+            <a href="/" class="red"><strong><%- page.l.home %></strong></a>
             <% page.urls.years.slice(0,1).forEach(function(year) { %>
-            <a href="<%- year.url %>" class="fiolet"><b>Новинки <%- year.title %></b></a>
+            <a href="<%- year.url %>" class="fiolet"><strong><%- page.l.premieres %> <%- year.title %></strong></a>
             <% }); %>
-            <a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>">Фильмы</a>
-            <a href="/<%- page.urls.type %>/<%- page.urls.types.serial %>"><b>Сериалы</b></a>
+            <a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>"><%- page.l.movies %></a>
+            <a href="/<%- page.urls.type %>/<%- page.urls.types.serial %>"><strong><%- page.l.series %></strong></a>
         </div>
 
         <% if (typeof slider === 'object' && slider.length) { %>
@@ -44,20 +44,20 @@
 
 <div class="topper" id="topper">
     <div class="wrapper">
-        <a href="/" title="На главную">
-            <img src="/themes/ramsay/public/images/logo.png" class="logo" alt="Логотип">
+        <a href="/" title="<%- page.l.home %>">
+            <img src="/themes/ramsay/public/images/logo.png?v=<%- page.ver %>" class="logo" alt="Logo">
         </a>
         <div class="mobile burger" onclick="showMenu();"></div>
         <div class="mobile showFind" onclick="showFinder();"></div>
         <div class="social">
-            <div class="ya-share2" data-services="vkontakte,facebook,odnoklassniki,moimir,gplus,twitter"></div>
+            <div class="ya-share2" data-services="vkontakte,facebook,gplus,twitter"></div>
         </div>
 
         <div class="searching">
             <form action="/<%- page.urls.search %>/title" name="searchform" method="get">
                 <div class="input-append">
                     <label>
-                        `<input class="search" type="text" id="story" name="q" value="Поиск" onBlur="if(this.value=='') this.value='Поиск';" onFocus="if(this.value=='Поиск') this.value='';" data-provide="typeahead" data-items="4">
+                        `<input class="search" type="text" id="story" name="q" value="<%- page.l.search %>" onBlur="if(this.value==='') this.value='<%- page.l.search %>';" onFocus="if(this.value==='<%- page.l.search %>') this.value='';" data-provide="typeahead" data-items="4">
                     </label>
                     <button class="search_btn" type="submit"></button>
                 </div>
@@ -65,7 +65,7 @@
         </div>
 
         <div class="login continueViewingBlock" style="display: none;">
-            <a href="javascript:void(0)" id="continueViewing"><img src="/themes/ramsay/public/images/video-play.png" class="h2-title-short" alt="Продолжить смотреть"> На чем остановились?</a>
+            <a href="javascript:void(0)" id="continueViewing"><img src="/themes/ramsay/public/images/video-play.png" class="h2-title-short" alt="<%- page.l.continue %>"> <%- page.l.continue %></a>
         </div>
 
     </div>

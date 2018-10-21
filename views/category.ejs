@@ -18,7 +18,7 @@
                     <div class="speedbar">
 						<span>
 							<a href="/">
-								<span>Главная</span>
+								<span><%- page.l.home %></span>
 							</a>
 						</span> »
                         <%= page.title %>
@@ -33,7 +33,7 @@
 
                 <div class="sort">
 
-                    <h1><%= page.title %></h1>
+                    <h1><%- page.h1 %></h1>
 
                     <% if (typeof content === 'object') { %>
                     <div class="cinemapress-content">
@@ -92,7 +92,7 @@
                     <div class="short_zombiz">
                         <div class="short_story">
                             <div class="title">
-                                <img src="/themes/ramsay/public/images/video-play.png" class="h2-title-short" alt="Онлайн">
+                                <img src="/themes/ramsay/public/images/video-play.png" class="h2-title-short" alt="<%- page.l.online %>">
                                 <h2><a href="<%- movie.url %>"><%= movie.title %> (<%- movie.year %>)</a></h2>
                             </div>
                             <div class="short_img2">
@@ -129,42 +129,42 @@
                                 <% } %>
                                 <% if (movie.year_url) { %>
                                 <div style="margin-bottom: 5px">
-                                    <span class="bold">Год:</span> <%- movie.year_url %>
+                                    <span class="bold"><%- page.l.year %>:</span> <%- movie.year_url %>
                                 </div>
                                 <% } %>
                                 <% if (movie.countries_url) { %>
                                 <div style="margin-bottom: 5px">
-                                    <span class="bold">Страна:</span> <%- movie.countries_url %>
+                                    <span class="bold"><%- page.l.countries %>:</span> <%- movie.countries_url %>
                                 </div>
                                 <% } %>
                                 <% if (movie.genres_url) { %>
                                 <div style="margin-bottom: 5px">
-                                    <span class="bold">Жанр:</span> <%- movie.genres_url %>
+                                    <span class="bold"><%- page.l.genres %>:</span> <%- movie.genres_url %>
                                 </div>
                                 <% } %>
                                 <% if (movie.directors_url) { %>
                                 <div style="margin-bottom: 5px">
-                                    <span class="bold">Режиссер:</span> <%- movie.directors_url %>
+                                    <span class="bold"><%- page.l.directors %>:</span> <%- movie.directors_url %>
                                 </div>
                                 <% } %>
                                 <% if (movie.actors_url) { %>
                                 <div style="margin-bottom: 5px">
-                                    <span class="bold">Актеры:</span> <%- movie.actors_url %>
+                                    <span class="bold"><%- page.l.actors %>:</span> <%- movie.actors_url %>
                                 </div>
                                 <% } %>
                                 <% if (movie.kp_rating) { %>
                                 <div style="margin-bottom: 5px">
-                                    <span class="bold" style="color: #F29420">КиноПоиск:</span> <%- movie.kp_rating/10 %> (<%- movie.kp_vote %> голосов)
+                                    <span class="bold" style="color: #F29420"><%- page.l.kp %>:</span> <%- movie.kp_rating/10 %> (<%- movie.kp_vote %> <%- page.l.votes %>)
                                 </div>
                                 <% } %>
                                 <% if (movie.imdb_rating) { %>
                                 <div style="margin-bottom: 5px">
-                                    <span class="bold" style="color: #E4AD2C">IMDb:</span> <%- movie.imdb_rating/10 %> (<%- movie.imdb_vote %> голосов)
+                                    <span class="bold" style="color: #E4AD2C"><%- page.l.imdb %>:</span> <%- movie.imdb_rating/10 %> (<%- movie.imdb_vote %> <%- page.l.votes %>)
                                 </div>
                                 <% } %>
                             </div>
                                 <span style="float:right; padding-top: 4px;">
-                                    <span class="dateicon" title="Дата"><%- movie.premiere %></span>
+                                    <span class="dateicon" title="<%- page.l.premiere %>"><%- movie.premiere %></span>
                                 </span>
                             <div style="clear:both;"></div>
                             <% if (movie.rating) { %>
