@@ -57,33 +57,25 @@
                     <div style="clear: both;"></div>
                     <% } %>
 
-                    <br><br>
+                    <div class="randomMovieCategory">
+                        <div class="cinemapress-random-category"
+                             onclick="window.location.href='<%- page.url %>?random'">
+                            <img src="/themes/ramsay/public/images/dice.svg" alt="<%- page.l.random %>">
+                            <span><%- page.l.lucky %></span>
+                            <small><%- page.l.random %></small>
+                        </div>
+                    </div>
 
                     <% if (typeof page.sorting === 'object') { %>
-
-                    <% page.sorting.forEach(function (sort) { %>
-
-                    <% if (sort.active) { %>
-
-                    <a href="<%- sort.url %>">
-                        <strong><%- sort.name %></strong>
-                    </a>
-
-                    <% } else { %>
-
-                    <a href="<%- sort.url %>">
-                        <%- sort.name %>
-                    </a>
-
-                    <% } %>
-
-                    <% }); %>
-
+                    <div class="cinemapress-sort">
+                        <% page.sorting.forEach(function (sort) { %>
+                        <% if (sort.active) { %><a href="<%- sort.url %>" class="cinemapress-sort-active"><%- sort.name.replace(/\s/g,'&nbsp;') %></a><% } else { %><a href="<%- sort.url %>"><%- sort.name.replace(/\s/g,'&nbsp;') %></a><% } }); %>
+                    </div>
                     <% } %>
 
                 </div>
 
-                <div id='cinemapress-content'>
+                <div id="cinemapress-content">
 
                     <% if (typeof movies === 'object' && movies.length) { %>
 

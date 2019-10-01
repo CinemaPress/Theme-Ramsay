@@ -82,7 +82,7 @@
                             </div>
                             <div class="nomt">
                                 <div style="margin: 30px auto;">
-                                    <div style="width: 100%; position: relative; overflow: hidden;">
+                                    <div id="cinemapress-player">
                                         <%- page.player %>
                                     </div>
                                 </div>
@@ -120,9 +120,17 @@
                             <div style="clear: both">
                                 <div class="bold advice_inf" style="margin: 20px auto 0 auto">
                                     <i><%- category.name %></i>
+                                    <div class="randomMovieRelated">
+                                        <div class="cinemapress-random-related"
+                                             onclick="window.location.href='<%- category.url %>?random'"
+                                             title="<%- page.l.random %>">
+                                            <img src="/themes/ramsay/public/images/dice.svg" alt="<%- page.l.random %>">
+                                        </div>
+                                    </div>
                                 </div>
                                 <ul class="bloggg" style="padding-top: 15px;">
                                     <% if (category.movies.length) {
+                                    category.movies.splice(5, category.movies.length % 5);
                                     category.movies.forEach(function (movie) { %>
                                     <li>
                                         <a href="<%- movie.url %>" class="brost" title="<%= movie.title %> (<%- movie.year %>)">

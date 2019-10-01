@@ -50,18 +50,26 @@
         <div class="mobile burger" onclick="showMenu();"></div>
         <div class="mobile showFind" onclick="showFinder();"></div>
         <div class="social">
-            <div class="ya-share2" data-services="vkontakte,facebook,gplus,twitter"></div>
+            <div class="ya-share2" data-services="vkontakte,facebook,twitter"></div>
         </div>
 
         <div class="searching">
-            <form action="/<%- page.urls.search %>/title" name="searchform" method="get">
+            <form action="/<%- page.urls.search %>" name="searchform" method="get">
                 <div class="input-append">
                     <label>
-                        `<input class="search" type="text" id="story" name="q" value="<%- page.l.search %>" onBlur="if(this.value==='') this.value='<%- page.l.search %>';" onFocus="if(this.value==='<%- page.l.search %>') this.value='';" data-provide="typeahead" data-items="4">
+                        <input class="search" type="text" id="story" name="q" value="<%- page.l.search %>" onBlur="if(this.value==='') this.value='<%- page.l.search %>';" onFocus="if(this.value==='<%- page.l.search %>') this.value='';" data-provide="typeahead" data-items="4" data-autocomplete="desktop">
                     </label>
                     <button class="search_btn" type="submit"></button>
+                    <div class="cinemapress-autocomplete" data-autocomplete="desktop"></div>
                 </div>
             </form>
+        </div>
+
+        <div class="randomMovieMenu">
+            <div class="login cinemapress-random-menu">
+                <a href="/?random" title="<%- page.l.lucky %>">
+                    <img src="/themes/ramsay/public/images/dice.svg" class="h2-title-short" alt="<%- page.l.lucky %>"> <%- page.l.lucky %></a>
+            </div>
         </div>
 
         <div class="login continueViewingBlock" style="display: none;">

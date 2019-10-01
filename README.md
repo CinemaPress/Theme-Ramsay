@@ -1,10 +1,10 @@
 # Theme «ramsay»
 
-![Theme «ramsay» for CinemaPress ACMS](https://raw.githubusercontent.com/CinemaPress/Theme-Ramsay/master/screenshot.png "Theme «ramsay» for CinemaPress ACMS")
+![Theme «ramsay» for CinemaPress](https://raw.githubusercontent.com/CinemaPress/Theme-Ramsay/master/screenshot.png "Theme «ramsay» for CinemaPress")
 
-:art: Theme «ramsay» for CinemaPress ACMS
+:art: Theme «ramsay» for CinemaPress
 
-- [Ramsay.CinemaPress.org](http://Ramsay.CinemaPress.org/)
+- [Ramsay.CinemaPress.io](http://Ramsay.CinemaPress.io/)
 
 ## How to install?
 1. Download [GitHub](https://github.com/CinemaPress/Theme-Ramsay/archive/master.zip) or [GitLab](https://gitlab.com/CinemaPress/Theme-Ramsay/repository/archive.zip) or [BitBucket](https://bitbucket.org/cinemapress/theme-ramsay/get/master.zip) or [Coding](https://coding.net/u/CinemaPress/p/Theme-Ramsay/git/archive/master.zip)
@@ -14,7 +14,7 @@
 
 ## Installation via terminal
 ```
-~# wget cinemapress.org/i -qO i && chmod +x i && ./i 3
+~# bash <(wget -qO- cinemapress.sh)
 ```
 
 ## Как установить?
@@ -25,5 +25,5 @@
 
 ## Установка через терминал
 ```
-~# wget cinemapress.org/i -qO i && chmod +x i && ./i 3
+~# bash <(wget -qO- cinemapress.sh)
 ```
