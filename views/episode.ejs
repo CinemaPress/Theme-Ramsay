@@ -44,7 +44,7 @@
                 <div id="cinemapress-content">
                     <div class="short_zombiz">
                         <div class="title-full">
-                            <img src="/themes/ramsay/public/images/video-play.png" class="h2-title-short" alt="<%- page.l.online %>">
+                            <img src="/themes/<%- page.theme %>/public/images/video-play.png" class="h2-title-short" alt="<%- page.l.online %>">
                             <h1><%- page.h1 %></h1>
                         </div>
 
@@ -119,7 +119,7 @@
                             <% contents.forEach(function (content) { %>
                             <div style="float: left; width: 50%;">
                                 <div style="margin: 0; padding: 10px">
-                                    <a href="<%- content.url %>" class="cinemapress-news" style="background-image:url(<%- content.image %>);">
+                                    <a href="<%- content.url %>" class="cinemapress-news" style="background-image:url('<%- content.image %>');">
                                         <div class="cinemapress-news-title">
                                             <%= content.title %>
                                         </div>
@@ -139,9 +139,9 @@
                                     <i><%- category.name %></i>
                                     <div class="randomMovieRelated">
                                         <div class="cinemapress-random-related"
-                                             onclick="window.location.href='<%- category.url %>?random'"
+                                             onclick="window.location.href='<%- (category.url.indexOf('?')+1 ? category.url + '&random' : category.url + '?random') %>'"
                                              title="<%- page.l.random %>">
-                                            <img src="/themes/ramsay/public/images/dice.svg" alt="<%- page.l.random %>">
+                                            <img src="/themes/<%- page.theme %>/public/images/dice.svg" alt="<%- page.l.random %>">
                                         </div>
                                     </div>
                                 </div>

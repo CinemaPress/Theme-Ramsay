@@ -34,9 +34,9 @@
                         <%- category.name %>
                         <div class="randomMovieIndex">
                             <div class="cinemapress-random-index"
-                                 onclick="window.location.href='<%- category.url %>?random'"
+                                 onclick="window.location.href='<%- (category.url.indexOf('?')+1 ? category.url + '&random' : category.url + '?random') %>'"
                                  title="<%- page.l.random %>">
-                                <img src="/themes/ramsay/public/images/dice.svg" alt="<%- page.l.random %>">
+                                <img src="/themes/<%- page.theme %>/public/images/dice.svg" alt="<%- page.l.random %>">
                             </div>
                         </div>
                     </h2>
@@ -52,7 +52,7 @@
                     <div class="short_zombiz">
                         <div class="short_story">
                             <div class="title">
-                                <img src="/themes/ramsay/public/images/video-play.png" class="h2-title-short" alt="<%- page.l.online %>">
+                                <img src="/themes/<%- page.theme %>/public/images/video-play.png" class="h2-title-short" alt="<%- page.l.online %>">
                                 <h3><a href="<%- movie.url %>"><%= movie.title %> (<% if (movie.season && movie.episode) { %><%- movie.season %> <%- page.l.season %> <%- movie.episode %> <%- page.l.episode %><% } else { %><%- movie.year %><% } %>)</a></h3>
                             </div>
                             <div class="short_img2">

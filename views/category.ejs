@@ -59,8 +59,8 @@
 
                     <div class="randomMovieCategory">
                         <div class="cinemapress-random-category"
-                             onclick="window.location.href='<%- page.url %>?random'">
-                            <img src="/themes/ramsay/public/images/dice.svg" alt="<%- page.l.random %>">
+                             onclick="window.location.href='<%- (page.url.indexOf('?')+1 ? page.url + '&random' : page.url + '?random') %>'">
+                            <img src="/themes/<%- page.theme %>/public/images/dice.svg" alt="<%- page.l.random %>">
                             <span><%- page.l.lucky %></span>
                             <small><%- page.l.random %></small>
                         </div>
@@ -84,7 +84,7 @@
                     <div class="short_zombiz">
                         <div class="short_story">
                             <div class="title">
-                                <img src="/themes/ramsay/public/images/video-play.png" class="h2-title-short" alt="<%- page.l.online %>">
+                                <img src="/themes/<%- page.theme %>/public/images/video-play.png" class="h2-title-short" alt="<%- page.l.online %>">
                                 <h2><a href="<%- movie.url %>"><%= movie.title %> (<%- movie.year %>)</a></h2>
                             </div>
                             <div class="short_img2">
