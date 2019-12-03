@@ -40,7 +40,7 @@
                         <li class="msupdate_block_list_item">
                             <div class="msupdate_block_list_item_inner">
                                 <div class="cell cell-1">
-                                    <a class="msupdate_block_list_link" href="<%- movie.url %>"><%= movie.title %></a> <span class="season"><% if (movie.season && movie.episode) { %><%- movie.season %> <%- page.l.season %> <%- movie.episode %> <%- page.l.episode %><% if (movie.translate) { %>(<%- movie.translate %>)<% } %><% } %></span>
+                                    <a class="msupdate_block_list_link" href="<%- movie.url %>"><%= movie.title %></a> <span class="season"><% if (movie.season && movie.episode) { %><%- movie.season %> <%- page.l.season %> <%- movie.episode %> <%- page.l.episode %><% if (movie.translate) { %><br><%- movie.translate %><% } %><% } %></span>
                                 </div>
                             </div>
                         </li>
