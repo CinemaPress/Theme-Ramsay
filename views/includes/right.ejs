@@ -25,6 +25,33 @@
 
         <% } %>
 
+        <% if (typeof index === 'object') {
+                for (var type in index) {
+        if (index.hasOwnProperty(type) && index[type].length && type === 'episode') {
+        index[type].forEach(function (category) { %>
+
+            <div class="msupdate_block">
+                <div class="msupdate_block_date"><%- category.name %></div>
+                <ul class="msupdate_block_list">
+
+                    <% if (category.movies.length) {
+                    category.movies.forEach(function (movie) { %>
+
+                        <li class="msupdate_block_list_item">
+                            <div class="msupdate_block_list_item_inner">
+                                <div class="cell cell-1">
+                                    <a class="msupdate_block_list_link" href="<%- movie.url %>"><%= movie.title %></a> <span class="season"><% if (movie.season && movie.episode) { %><%- movie.season %> <%- page.l.season %> <%- movie.episode %> <%- page.l.episode %><% if (movie.translate) { %>(<%- movie.translate %>)<% } %><% } %></span>
+                                </div>
+                            </div>
+                        </li>
+
+                    <% }); } %>
+
+                </ul>
+            </div>
+
+        <% }); } } } %>
+
         <ul class="leftmenu mc2">
             <% page.urls.years.slice(0,5).forEach(function(year) { %>
             <li>

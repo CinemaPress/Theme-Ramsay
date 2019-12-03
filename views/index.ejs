@@ -24,7 +24,7 @@
 
                 <% if (typeof index === 'object') { for (var type in index) { if (index.hasOwnProperty(type)) { %>
 
-                <% if (index[type].length) { %>
+                <% if (index[type].length && type !== 'episode') { %>
 
                 <% index[type].forEach(function (category) { %>
 
