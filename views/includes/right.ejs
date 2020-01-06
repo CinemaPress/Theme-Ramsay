@@ -3,25 +3,25 @@
 
         <% if (typeof top === 'object' && top.length) { %>
 
-        <div class="msupdate_block">
-            <div class="msupdate_block_date"><%- page.l.top %></div>
-            <ul class="msupdate_block_list">
+            <div class="msupdate_block">
+                <div class="msupdate_block_date"><%- page.l.top %></div>
+                <ul class="msupdate_block_list">
 
-                <% top.forEach(function (movie) { %>
+                    <% top.forEach(function (movie) { %>
 
-                <li class="msupdate_block_list_item">
-                    <div class="msupdate_block_list_item_inner">
-                        <div class="cell cell-1">
-                            <a class="msupdate_block_list_link" href="<%- movie.url %>"><%= movie.title %></a> <span class="season"><%= movie.title_en %></span>
-                        </div>
-                        <span class="cell cell-2"><%- movie.year %></span>
-                    </div>
-                </li>
+                        <li class="msupdate_block_list_item">
+                            <div class="msupdate_block_list_item_inner">
+                                <div class="cell cell-1">
+                                    <a class="msupdate_block_list_link" href="<%- movie.url %>"><%= movie.title %></a> <span class="season"><%= movie.title_en %></span>
+                                </div>
+                                <span class="cell cell-2"><%- movie.year %></span>
+                            </div>
+                        </li>
 
-                <% }); %>
+                    <% }); %>
 
-            </ul>
-        </div>
+                </ul>
+            </div>
 
         <% } %>
 
@@ -54,11 +54,11 @@
 
         <ul class="leftmenu mc2">
             <% page.urls.years.slice(0,5).forEach(function(year) { %>
-            <li>
-                <a href="<%- year.url %>">
-                    <span><%- page.l.movies %> <%- year.title %></span>
-                </a>
-            </li>
+                <li>
+                    <a href="<%- year.url %>">
+                        <span><%- page.l.movies %> <%- year.title %></span>
+                    </a>
+                </li>
             <% }); %>
         </ul>
         <div class="menugod">
@@ -68,11 +68,11 @@
         <nav>
             <ul class="leftmenu mc1">
                 <% page.urls.genres.forEach(function(genre) { %>
-                <li>
-                    <a href="<%- genre.url %>">
-                        <span><%- genre.title %></span>
-                    </a>
-                </li>
+                    <li>
+                        <a href="<%- genre.url %>">
+                            <span><%- genre.title %></span>
+                        </a>
+                    </li>
                 <% }); %>
             </ul>
         </nav>
@@ -86,81 +86,80 @@
         </ul>
 
         <% if (typeof page.adv === 'object' && page.adv.right) { %>
-        <div style="clear: both"></div>
-        <div style="text-align: center; margin: 10px auto;">
-            <%- page.adv.right %>
-        </div>
-        <div style="clear: both"></div>
+            <div style="clear: both"></div>
+            <div style="text-align: center; margin: 10px auto;">
+                <%- page.adv.right %>
+            </div>
+            <div style="clear: both"></div>
         <% } %>
 
         <% if (typeof soon === 'object' && soon.length) { %>
 
-        <span class="right_blockb"><%- page.l.soon.split(' ')[0] || '' %></span><br>
-        <span class="bold-t"><%- page.l.soon.split(' ')[1] || '' %></span><br>
-        <div class="slideserbox">
-            <ul id="slides4">
+            <span class="right_blockb"><%- page.l.soon.split(' ')[0] || '' %></span><br>
+            <span class="bold-t"><%- page.l.soon.split(' ')[1] || '' %></span><br>
+            <div class="slideserbox">
+                <ul id="slides4">
 
-                <% soon.forEach(function (movie) { %>
+                    <% soon.forEach(function (movie) { %>
 
-                <li>
-                    <a href="<%- movie.url %>" class="brost" title="<%= movie.title %> (<%- movie.year %>)">
-                        <img class="ghost" src="<%- movie.poster %>" alt="<%= movie.title %> (<%- movie.year %>)"/>
-                        <span><%= movie.title %> (<%- movie.year %>)</span>
-                    </a>
-                </li>
+                        <li>
+                            <a href="<%- movie.url %>" class="brost" title="<%= movie.title %> (<%- movie.year %>)">
+                                <img class="ghost" src="<%- movie.poster %>" alt="<%= movie.title %> (<%- movie.year %>)"/>
+                                <span><%= movie.title %> (<%- movie.year %>)</span>
+                            </a>
+                        </li>
 
-                <% }); %>
+                    <% }); %>
 
-            </ul>
-        </div>
+                </ul>
+            </div>
 
         <% } %>
 
         <% if (typeof news === 'object' && news.length) { %>
-        <% news.forEach(function (content) { %>
-        <div style="float: left; width: 100%;">
-            <div style="margin: 10px 0; padding: 0">
-                <a href="<%- content.url %>" class="cinemapress-news" style="background-image:url('<%- content.image %>');">
-                    <div class="cinemapress-news-title">
-                        <%= content.title %>
+            <% news.forEach(function (content) { %>
+                <div style="float: left; width: 100%;">
+                    <div style="margin: 10px 0; padding: 0">
+                        <a href="<%- content.url %>" class="cinemapress-news" style="background-image:url('<%- content.image %>');">
+                            <div class="cinemapress-news-title">
+                                <%= content.title %>
+                            </div>
+                        </a>
                     </div>
-                </a>
-            </div>
-        </div>
-        <% }); %>
+                </div>
+            <% }); %>
         <% } %>
 
         <% if (typeof recent === 'object' && recent.length) { %>
-        <% recent.forEach(function (comment) { %>
-        <div style="float: left; width: 100%;">
-            <div class="cinemapress-recent">
-                <div class="cinemapress-recent-head">
-                    <% if (comment.avatar) { %>
-                    <div class="cinemapress-recent-head-avatar">
-                        <img src="<%- comment.avatar %>" alt="<%- comment.user %>">
+            <div style="clear: both"></div>
+            <% recent.forEach(function (comment) { %>
+                <div class="cinemapress-comment">
+                    <div class="cinemapress-comment-head">
+                        <div class="cinemapress-comment-head-avatar">
+                            <img src="<%- comment.avatar %>" alt="<%= comment.user %>">
+                        </div>
+                        <div class="cinemapress-comment-head-meta">
+                            <div class="cinemapress-comment-head-meta-title">
+                                <a href="<%- comment.url %>" title="<%= comment.title %>"><%= comment.title %></a>
+                            </div>
+                            <div class="cinemapress-comment-user" data-comment-id="<%- comment.id %>">
+                                <div class="cinemapress-comment-user-name">
+                                    <%- comment.user %>
+                                </div><div class="cinemapress-comment-user-said">
+                                    <%- page.l.said %>
+                                </div><div class="cinemapress-comment-user-date">
+                                    <%- comment.date %>
+                                </div><div class="cinemapress-comment-user-link">
+                                    <a href="<%- comment.url %>#c<%- comment.id %>" title="<%= comment.title %>">#</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <% } %>
-                    <div class="cinemapress-recent-head-meta">
-                        <div>
-                            <a href="<%- comment.url %>"><%= comment.title %></a>
-                        </div>
-                        <div>
-                            <span>
-                                <%- comment.user %>
-                            </span><span>
-                                <%- page.l.said %>
-                            </span><span>
-                                <%- comment.date %>
-                            </span>
-                        </div>
+                    <div class="cinemapress-comment-bg cinemapress-comment-radius">
+                        <%- comment.comment %>
                     </div>
                 </div>
-                <div class="cinemapress-recent-comment">
-                    <%- comment.comment %>
-                </div>
-            </div>
-        </div>
-        <% }); %>
+            <% }); %>
         <% } %>
 
     </div>

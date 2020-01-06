@@ -3,7 +3,7 @@
         <div class="menuSch">
             <a href="/" class="red"><strong><%- page.l.home %></strong></a>
             <% page.urls.years.slice(0,1).forEach(function(year) { %>
-            <a href="<%- year.url %>" class="fiolet"><strong><%- page.l.premieres %> <%- year.title %></strong></a>
+                <a href="<%- year.url %>" class="fiolet"><strong><%- page.l.premieres %> <%- year.title %></strong></a>
             <% }); %>
             <a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>"><%- page.l.movies %></a>
             <a href="/<%- page.urls.type %>/<%- page.urls.types.serial %>"><strong><%- page.l.series %></strong></a>
@@ -11,30 +11,30 @@
 
         <% if (typeof slider === 'object' && slider.length) { %>
 
-        <div class="sliderbox">
-            <div class="toop">
-                <div class="carousel">
-                    <div id="carousel" class="carousel_inner">
+            <div class="sliderbox">
+                <div class="toop">
+                    <div class="carousel">
+                        <div id="carousel" class="carousel_inner">
 
-                        <% slider.forEach(function (movie) { %>
+                            <% slider.forEach(function (movie) { %>
 
-                        <div class="carousel_box">
+                                <div class="carousel_box">
 
-                            <a href="<%- movie.url %>" class="thumbnail" title="<%= movie.title %> (<%- movie.year %>)">
-                                <img src="<%- movie.poster %>" alt="<%= movie.title %> (<%- movie.year %>)" style="max-width:100%;">
-                                <div class="text_filmsss text_filmsss_top"><%= movie.title %></div>
-                            </a>
+                                    <a href="<%- movie.url %>" class="thumbnail" title="<%= movie.title %> (<%- movie.year %>)">
+                                        <img src="<%- movie.poster %>" alt="<%= movie.title %> (<%- movie.year %>)" style="max-width:100%;">
+                                        <div class="text_filmsss text_filmsss_top"><%= movie.title %></div>
+                                    </a>
+
+                                </div>
+
+                            <% }); %>
 
                         </div>
-
-                        <% }); %>
-
+                        <input type="button" id="carousel_prev" value="prev">
+                        <input type="button" id="carousel_next" value="next">
                     </div>
-                    <input type="button" id="carousel_prev" value="prev">
-                    <input type="button" id="carousel_next" value="next">
                 </div>
             </div>
-        </div>
 
         <% } %>
 
@@ -44,8 +44,8 @@
 
 <div class="topper" id="topper">
     <div class="wrapper">
-        <a href="/" title="<%- page.l.home %>">
-            <img src="/themes/<%- page.theme %>/public/images/logo.png?v=<%- page.ver %>" class="logo" alt="Logo">
+        <a href="/" title="<%= page.l.home %>">
+            <img src="/themes/<%- page.theme %>/public/images/logo.svg?v=<%- page.ver %>" class="logo" alt="Logo">
         </a>
         <div class="mobile burger" onclick="showMenu();"></div>
         <div class="mobile showFind" onclick="showFinder();"></div>
@@ -67,13 +67,13 @@
 
         <div class="randomMovieMenu">
             <div class="login cinemapress-random-menu">
-                <a href="/?random" title="<%- page.l.lucky %>">
-                    <img src="/themes/<%- page.theme %>/public/images/dice.svg" class="h2-title-short" alt="<%- page.l.lucky %>"> <%- page.l.lucky %></a>
+                <a href="/?random" title="<%= page.l.lucky %>">
+                    <img src="/themes/<%- page.theme %>/public/images/dice.svg" class="h2-title-short" alt="<%= page.l.lucky %>"> <%- page.l.lucky %></a>
             </div>
         </div>
 
         <div class="login continueViewingBlock" style="display: none;">
-            <a href="javascript:void(0)" id="continueViewing"><img src="/themes/<%- page.theme %>/public/images/video-play.png" class="h2-title-short" alt="<%- page.l.continue %>"> <%- page.l.continue %></a>
+            <a href="javascript:void(0)" id="continueViewing"><img src="/themes/<%- page.theme %>/public/images/video-play.png" class="h2-title-short" alt="<%= page.l.continue %>"> <%- page.l.continue %></a>
         </div>
 
     </div>

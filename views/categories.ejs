@@ -2,13 +2,13 @@
 <html lang="<%- page.language %>">
 <head>
 
-    <% include includes/head.ejs %>
+    <%- include('includes/head.ejs'); -%>
 
 </head>
 <body>
 <div class="wrapper">
 
-    <% include includes/header.ejs %>
+    <%- include('includes/header.ejs'); -%>
 
     <div class="container">
         <main>
@@ -26,9 +26,9 @@
                 </div>
 
                 <% if (typeof page.adv === 'object' && page.adv.top) { %>
-                <div class="decription" style="text-align: center; border: 1px solid #101010;">
-                    <%- page.adv.top %>
-                </div>
+                    <div class="decription" style="text-align: center; border: 1px solid #101010;">
+                        <%- page.adv.top %>
+                    </div>
                 <% } %>
 
                 <div class="short_zombiz">
@@ -39,16 +39,16 @@
                             <div class="collect-content">
 
                                 <% if (typeof categories === 'object' && categories.length) { %>
-                                <div style="clear: both"></div>
-                                <% categories.forEach(function (content) { %>
-                                <div style="float:left;width:50%;">
-                                    <div style="margin:10px;padding:0;position:relative">
-                                        <div class="cinemapress-categories" style="background-image:url('<%- content.image %>');"></div>
-                                        <a href="<%- content.url %>" class="cinemapress-categories-title"><%= content.title %></a>
-                                    </div>
-                                </div>
-                                <% }); %>
-                                <div style="clear: both"></div>
+                                    <div style="clear: both"></div>
+                                    <% categories.forEach(function (content) { %>
+                                        <div style="float:left;width:50%;">
+                                            <div style="margin:10px;padding:0;position:relative">
+                                                <div class="cinemapress-categories" style="background-image:url('<%- content.image %>');"></div>
+                                                <a href="<%- content.url %>" class="cinemapress-categories-title"><%= content.title %></a>
+                                            </div>
+                                        </div>
+                                    <% }); %>
+                                    <div style="clear: both"></div>
                                 <% } %>
 
                             </div>
@@ -57,18 +57,18 @@
                 </div>
 
                 <% if (typeof page.adv === 'object' && page.adv.bottom) { %>
-                <div class="decription" style="text-align: center; border-right: 1px solid #101010;">
-                    <%- page.adv.bottom %>
-                </div>
+                    <div class="decription" style="text-align: center; border-right: 1px solid #101010;">
+                        <%- page.adv.bottom %>
+                    </div>
                 <% } %>
 
                 <% if (page.seo) { %>
 
-                <div class="decription" style="border-right: 1px solid #101010;">
-                    <div class="decription-text">
-                        <%- page.seo %>
+                    <div class="decription" style="border-right: 1px solid #101010;">
+                        <div class="decription-text">
+                            <%- page.seo %>
+                        </div>
                     </div>
-                </div>
 
                 <% } %>
 
@@ -76,12 +76,12 @@
         </main>
         <aside>
 
-            <% include includes/right.ejs %>
+            <%- include('includes/right.ejs'); -%>
 
         </aside>
     </div>
 
-    <% include includes/footer.ejs %>
+    <%- include('includes/footer.ejs'); -%>
 
 </div>
 </body>
