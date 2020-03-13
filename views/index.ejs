@@ -33,10 +33,13 @@
                                 <h2>
                                     <%- category.name %>
                                     <div class="randomMovieIndex">
-                                        <div <% if (!category.url) { %>style="display:none"<% } %> class="cinemapress-random-index"
-                                             onclick="window.location.href='<%- (category.url && category.url.indexOf('?')+1 ? category.url + '&random=' : category.url + '?random=') %><%- Math.random() %>'"
+                                        <div <% if (!category.url) { %>style="display:none"
+                                                <% } %>
+                                             class="cinemapress-random-index"
+                                             onclick="window.location.href='<%- (category.url && category.url.indexOf('?') + 1 ? category.url + '&random=' : category.url + '?random=') %><%- Math.random() %>'"
                                              title="<%= page.l.random %>">
-                                            <img src="/themes/<%- page.theme %>/public/images/dice.svg" alt="<%= page.l.random %>">
+                                            <img src="/themes/<%- page.theme %>/public/images/dice.svg"
+                                                 alt="<%= page.l.random %>">
                                         </div>
                                     </div>
                                 </h2>
@@ -52,26 +55,37 @@
                                         <div class="short_zombiz">
                                             <div class="short_story">
                                                 <div class="title">
-                                                    <img src="/themes/<%- page.theme %>/public/images/video-play.png" class="h2-title-short" alt="<%= page.l.online %>">
-                                                    <h3><a href="<%- movie.url %>"><%= movie.title %> (<% if (movie.season && movie.episode) { %><%- movie.season %> <%- page.l.season %> <%- movie.episode %> <%- page.l.episode %><% } else { %><%- movie.year %><% } %>)</a></h3>
+                                                    <img src="/themes/<%- page.theme %>/public/images/video-play.png"
+                                                         class="h2-title-short" alt="<%= page.l.online %>">
+                                                    <h3><a href="<%- movie.url %>"><%= movie.title %> (
+                                                            <% if (movie.season && movie.episode) { %><%- movie.season %> <%- page.l.season %> <%- movie.episode %> <%- page.l.episode %>
+                                                            <% } else { %><%- movie.year %>
+                                                            <% } %>
+                                                            )</a></h3>
                                                 </div>
                                                 <div class="short_img2">
                                                     <div class="short_img2-layout">
                                                         <div class="container-a4">
                                                             <ul class="caption-style-4">
                                                                 <li>
-                                                                    <a href="<%- movie.url %>" title="<%= movie.title %>">
+                                                                    <a href="<%- movie.url %>"
+                                                                       title="<%= movie.title %>">
                                                                         <div class="cinemapress-poster">
-                                                                            <img src="<%- movie.poster %>" alt="<%= movie.title %> (<%- movie.year %>)" title="<%= movie.title %> (<%- movie.year %>)" class="okrug">
+                                                                            <img src="<%- movie.poster %>"
+                                                                                 alt="<%= movie.title %> (<%- movie.year %>)"
+                                                                                 title="<%= movie.title %> (<%- movie.year %>)"
+                                                                                 class="okrug">
                                                                             <% if (movie.quality) { %>
                                                                                 <div class="cinemapress-quality">
-                                                                                    <span class="cinemapress-svg-quality" style="padding-top: 7px !important;"></span>
+                                                                                    <span class="cinemapress-svg-quality"
+                                                                                          style="padding-top: 7px !important;"></span>
                                                                                     <%- movie.quality %>
                                                                                 </div>
                                                                             <% } %>
                                                                             <% if (movie.translate) { %>
                                                                                 <div class="cinemapress-translate">
-                                                                                    <span class="cinemapress-svg-translate" style="padding-top: 7px !important;"></span>
+                                                                                    <span class="cinemapress-svg-translate"
+                                                                                          style="padding-top: 7px !important;"></span>
                                                                                     <%- movie.translate %>
                                                                                 </div>
                                                                             <% } %>
@@ -114,12 +128,15 @@
                                                     <% } %>
                                                     <% if (movie.kp_rating) { %>
                                                         <div style="margin-bottom: 5px">
-                                                            <span class="bold" style="color: #F29420"><%- page.l.kp %>:</span> <%- movie.kp_rating/10 %> (<%- movie.kp_vote %> <%- page.l.votes %>)
+                                                            <span class="bold"
+                                                                  style="color: #F29420"><%- page.l.kp %>:</span> <%- movie.kp_rating / 10 %>
+                                                            (<%- movie.kp_vote %> <%- page.l.votes %>)
                                                         </div>
                                                     <% } %>
                                                     <% if (movie.imdb_rating) { %>
                                                         <div style="margin-bottom: 5px">
-                                                            <span class="bold" style="color: #E4AD2C"><%- page.l.imdb %>:</span> <%- movie.imdb_rating/10 %> (<%- movie.imdb_vote %> <%- page.l.votes %>)
+                                                            <span class="bold" style="color: #E4AD2C"><%- page.l.imdb %>:</span> <%- movie.imdb_rating / 10 %>
+                                                            (<%- movie.imdb_vote %> <%- page.l.votes %>)
                                                         </div>
                                                     <% } %>
                                                 </div>
@@ -133,7 +150,8 @@
                                                             <div>
                                                                 <div class="rating">
                                                                     <ul class="unit-rating">
-                                                                        <li class="current-rating" style="width:<%- movie.rating %>%;"><%- movie.rating/10 %></li>
+                                                                        <li class="current-rating"
+                                                                            style="width:<%- movie.rating %>%;"><%- movie.rating / 10 %></li>
                                                                     </ul>
                                                                 </div>
                                                             </div>
@@ -160,7 +178,8 @@
                     <div class="bot-left">
                         <div class="bot-navigation">
                             <% if (page.pagination.first) { %>
-                                <a href="<%- page.pagination.first.link %>" rel="nofollow"><%- page.pagination.first.number %></a>
+                                <a href="<%- page.pagination.first.link %>"
+                                   rel="nofollow"><%- page.pagination.first.number %></a>
                                 <span class="nav_ext">...</span>
                             <% } %>
                             <% if (page.pagination.prev.length) { %>
@@ -178,7 +197,8 @@
                             <% } %>
                             <% if (page.pagination.last) { %>
                                 <span class="nav_ext">...</span>
-                                <a href="<%- page.pagination.last.link %>" rel="nofollow"><%- page.pagination.last.number %></a>
+                                <a href="<%- page.pagination.last.link %>"
+                                   rel="nofollow"><%- page.pagination.last.number %></a>
                             <% } %>
                         </div>
                     </div>

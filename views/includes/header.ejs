@@ -2,7 +2,7 @@
     <div class="header">
         <div class="menuSch">
             <a href="/" class="red"><strong><%- page.l.home %></strong></a>
-            <% page.urls.years.slice(0,1).forEach(function(year) { %>
+            <% page.urls.years.slice(0, 1).forEach(function(year) { %>
                 <a href="<%- year.url %>" class="fiolet"><strong><%- page.l.premieres %> <%- year.title %></strong></a>
             <% }); %>
             <a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>"><%- page.l.movies %></a>
@@ -20,8 +20,10 @@
 
                                 <div class="carousel_box">
 
-                                    <a href="<%- movie.url %>" class="thumbnail" title="<%= movie.title %> (<%- movie.year %>)">
-                                        <img src="<%- movie.poster %>" alt="<%= movie.title %> (<%- movie.year %>)" style="max-width:100%;">
+                                    <a href="<%- movie.url %>" class="thumbnail"
+                                       title="<%= movie.title %> (<%- movie.year %>)">
+                                        <img src="<%- movie.poster %>" alt="<%= movie.title %> (<%- movie.year %>)"
+                                             style="max-width:100%;">
                                         <div class="text_filmsss text_filmsss_top"><%= movie.title %></div>
                                     </a>
 
@@ -57,7 +59,10 @@
             <form action="/<%- page.urls.search %>" name="searchform" method="get">
                 <div class="input-append">
                     <label>
-                        <input class="search" type="text" id="story" name="q" value="<%- page.l.search %>" onBlur="if(this.value==='') this.value='<%- page.l.search %>';" onFocus="if(this.value==='<%- page.l.search %>') this.value='';" data-provide="typeahead" data-items="4" data-autocomplete="desktop">
+                        <input class="search" type="text" id="story" name="q" value="<%- page.l.search %>"
+                               onBlur="if(this.value==='') this.value='<%- page.l.search %>';"
+                               onFocus="if(this.value==='<%- page.l.search %>') this.value='';" data-provide="typeahead"
+                               data-items="4" data-autocomplete="desktop">
                     </label>
                     <button class="search_btn" type="submit"></button>
                     <div class="cinemapress-autocomplete" data-autocomplete="desktop"></div>
@@ -68,12 +73,15 @@
         <div class="randomMovieMenu">
             <div class="login cinemapress-random-menu">
                 <a href="/?random=<%- Math.random() %>" title="<%= page.l.lucky %>">
-                    <img src="/themes/<%- page.theme %>/public/images/dice.svg" class="h2-title-short" alt="<%= page.l.lucky %>"> <%- page.l.lucky %></a>
+                    <img src="/themes/<%- page.theme %>/public/images/dice.svg" class="h2-title-short"
+                         alt="<%= page.l.lucky %>"> <%- page.l.lucky %></a>
             </div>
         </div>
 
         <div class="login continueViewingBlock" style="display: none;">
-            <a href="javascript:void(0)" id="continueViewing"><img src="/themes/<%- page.theme %>/public/images/video-play.png" class="h2-title-short" alt="<%= page.l.continue %>"> <%- page.l.continue %></a>
+            <a href="javascript:void(0)" id="continueViewing"><img
+                        src="/themes/<%- page.theme %>/public/images/video-play.png" class="h2-title-short"
+                        alt="<%= page.l.continue %>"> <%- page.l.continue %></a>
         </div>
 
     </div>

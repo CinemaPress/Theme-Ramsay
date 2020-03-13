@@ -12,7 +12,8 @@
                         <li class="msupdate_block_list_item">
                             <div class="msupdate_block_list_item_inner">
                                 <div class="cell cell-1">
-                                    <a class="msupdate_block_list_link" href="<%- movie.url %>"><%= movie.title %></a> <span class="season"><%= movie.title_en %></span>
+                                    <a class="msupdate_block_list_link" href="<%- movie.url %>"><%= movie.title %></a>
+                                    <span class="season"><%= movie.title_en %></span>
                                 </div>
                                 <span class="cell cell-2"><%- movie.year %></span>
                             </div>
@@ -38,10 +39,18 @@
                     <% if (category.movies.length) {
                     category.movies.forEach(function (movie) { %>
 
-                        <li class="msupdate_block_list_item" <% if (movie.hide) { moreEpisodes = true; %>style="display:none" data-more-episodes="hide"<% } %>>
+                        <li class="msupdate_block_list_item"
+                            <% if (movie.hide) { moreEpisodes = true; %>style="display:none" data-more-episodes="hide"
+                                <% } %>
+                        >
                             <div class="msupdate_block_list_item_inner">
                                 <div class="cell cell-1">
-                                    <a class="msupdate_block_list_link" href="<%- movie.url %>"><%= movie.title %></a> <span class="season"><% if (movie.season && movie.episode) { %><%- movie.season %> <%- page.l.season %> <%- movie.episode %> <%- page.l.episode %><% if (movie.translate) { %><br><%- movie.translate %><% } %><% } %></span>
+                                    <a class="msupdate_block_list_link" href="<%- movie.url %>"><%= movie.title %></a>
+                                    <span class="season">
+                                        <% if (movie.season && movie.episode) { %><%- movie.season %> <%- page.l.season %> <%- movie.episode %> <%- page.l.episode %><% if (movie.translate) { %>
+                                            <br><%- movie.translate %><% } %>
+                                        <% } %>
+                                    </span>
                                 </div>
                             </div>
                         </li>
@@ -49,7 +58,8 @@
                     <% }); } %>
 
                     <% if (moreEpisodes) { %>
-                        <div class="moreEpisodes" onclick="var dme = document.querySelectorAll('[data-more-episodes]'); dme && dme.forEach(function(e) {e.style.display='block'});this.style.display='none'"><%- page.l.moreEpisodes %></div>
+                        <div class="moreEpisodes"
+                             onclick="var dme = document.querySelectorAll('[data-more-episodes]'); dme && dme.forEach(function(e) {e.style.display='block'});this.style.display='none'"><%- page.l.moreEpisodes %></div>
                     <% } %>
 
                 </ul>
@@ -58,7 +68,7 @@
         <% }); } } } %>
 
         <ul class="leftmenu mc2">
-            <% page.urls.years.slice(0,5).forEach(function(year) { %>
+            <% page.urls.years.slice(0, 5).forEach(function(year) { %>
                 <li>
                     <a href="<%- year.url %>">
                         <span><%- page.l.movies %> <%- year.title %></span>
@@ -68,7 +78,8 @@
         </ul>
         <div class="menugod">
             <a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>" class="menugo1d"><%- page.l.movies %></a>
-            <a href="/<%- page.urls.content %>?tag=<%- page.l.collections %>" class="menugo2d"><%- page.l.collections %></a>
+            <a href="/<%- page.urls.content %>?tag=<%- page.l.collections %>"
+               class="menugo2d"><%- page.l.collections %></a>
         </div>
         <nav>
             <ul class="leftmenu mc1">
@@ -109,7 +120,8 @@
 
                         <li>
                             <a href="<%- movie.url %>" class="brost" title="<%= movie.title %> (<%- movie.year %>)">
-                                <img class="ghost" src="<%- movie.poster %>" alt="<%= movie.title %> (<%- movie.year %>)"/>
+                                <img class="ghost" src="<%- movie.poster %>"
+                                     alt="<%= movie.title %> (<%- movie.year %>)"/>
                                 <span><%= movie.title %> (<%- movie.year %>)</span>
                             </a>
                         </li>
@@ -125,7 +137,8 @@
             <% news.forEach(function (content) { %>
                 <div style="float: left; width: 100%;">
                     <div style="margin: 10px 0; padding: 0">
-                        <a href="<%- content.url %>" class="cinemapress-news" style="background-image:url('<%- content.image %>');">
+                        <a href="<%- content.url %>" class="cinemapress-news"
+                           style="background-image:url('<%- content.image %>');">
                             <div class="cinemapress-news-title">
                                 <%= content.title %>
                             </div>
@@ -150,11 +163,14 @@
                             <div class="cinemapress-comment-user" data-comment-id="<%- comment.id %>">
                                 <div class="cinemapress-comment-user-name">
                                     <%- comment.user %>
-                                </div><div class="cinemapress-comment-user-said">
+                                </div>
+                                <div class="cinemapress-comment-user-said">
                                     <%- page.l.said %>
-                                </div><div class="cinemapress-comment-user-date">
+                                </div>
+                                <div class="cinemapress-comment-user-date">
                                     <%- comment.date %>
-                                </div><div class="cinemapress-comment-user-link">
+                                </div>
+                                <div class="cinemapress-comment-user-link">
                                     <a href="<%- comment.url %>#c<%- comment.id %>" title="<%= comment.title %>">#</a>
                                 </div>
                             </div>
