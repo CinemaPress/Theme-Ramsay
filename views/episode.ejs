@@ -153,7 +153,7 @@
                                         </div>
                                     </div>
                                     <ul class="bloggg" style="padding-top: 15px;">
-                                        <% if (category.movies.length) {
+                                        <% if (typeof category === 'object' && category.movies && category.movies.length) {
                                             category.movies.splice(5, category.movies.length % 5);
                                         category.movies.forEach(function (movie) { %>
                                             <li>

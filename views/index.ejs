@@ -48,7 +48,7 @@
 
                             <div>
 
-                                <% if (category.movies.length) { %>
+                                <% if (typeof category === 'object' && category.movies && category.movies.length) { %>
 
                                     <% category.movies.forEach(function (movie) { %>
 

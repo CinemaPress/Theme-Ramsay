@@ -36,7 +36,7 @@
                 <ul class="msupdate_block_list">
 
                     <% var moreEpisodes = false; %>
-                    <% if (category.movies.length) {
+                    <% if (typeof category === 'object' && category.movies && category.movies.length) {
                     category.movies.forEach(function (movie) { %>
 
                         <li class="msupdate_block_list_item"
