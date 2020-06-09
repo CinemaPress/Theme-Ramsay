@@ -7,6 +7,11 @@
 
 </head>
 <body>
+
+<% if (typeof page.adv === 'object' && page.adv.brand) { %>
+    <%- page.adv.brand %>
+<% } %>
+
 <div class="wrapper">
 
     <%- include('includes/header.ejs'); -%>
