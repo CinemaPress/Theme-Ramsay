@@ -72,10 +72,10 @@
                                                                     <a href="<%- movie.url %>"
                                                                        title="<%= movie.title %>">
                                                                         <div class="cinemapress-poster">
-                                                                            <img src="<%- movie.poster_min %>" data-cinemapress-src="<%- movie.poster %>"
+                                                                            <img src="<%- movie.poster_min %>" data-src="<%- movie.poster %>"
                                                                                  alt="<%= movie.title %> (<%- movie.year %>)"
                                                                                  title="<%= movie.title %> (<%- movie.year %>)"
-                                                                                 class="okrug">
+                                                                                 class="lazy okrug">
                                                                             <% if (movie.quality) { %>
                                                                                 <div class="cinemapress-quality">
                                                                                     <span class="cinemapress-svg-quality"

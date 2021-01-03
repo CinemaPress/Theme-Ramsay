@@ -55,7 +55,7 @@
                                 <div class="vozmojnosti"><i><strong><%- page.title %></strong></i></div>
                                 <div>
                                     <div class="short_img">
-                                        <img src="<%- movie.poster_min %>" data-cinemapress-src="<%- movie.poster %>" alt="<%= page.title %>" title="<%= page.title %>"
+                                        <img src="<%- movie.poster_min %>" class="lazy" data-src="<%- movie.poster %>" alt="<%= page.title %>" title="<%= page.title %>"
                                              data-cinemapress-poster="<%- movie.poster %>">
                                         <p style="text-align: justify">
                                             <%- movie.description %>
@@ -236,7 +236,7 @@
                                             <li>
                                                 <a href="<%- movie.url %>" class="brost"
                                                    title="<%= movie.title %> (<%- movie.year %>)">
-                                                    <img src="<%- movie.poster_min %>" data-cinemapress-src="<%- movie.poster %>"
+                                                    <img src="<%- movie.poster_min %>" class="lazy" data-src="<%- movie.poster %>"
                                                          alt="<%= movie.title %> (<%- movie.year %>)"
                                                          style="height:170px; width:115px;">
                                                     <%= movie.title %> (<%- movie.year %>)
