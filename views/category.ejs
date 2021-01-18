@@ -5,7 +5,7 @@
     <%- include('includes/head.ejs'); -%>
 
 </head>
-<body>
+<body class="lazy" data-bg="/themes/<%- page.theme %>/public/images/bg.png">
 
 <% if (typeof page.adv === 'object' && page.adv.brand) { %>
     <%- page.adv.brand %>
