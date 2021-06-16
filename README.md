@@ -1,10 +1,10 @@
 # Theme «ramsay»
 
-![Theme «ramsay» for CinemaPress](https://raw.githubusercontent.com/CinemaPress/Theme-Ramsay/master/screenshot.png "Theme «ramsay» for CinemaPress")
+![Theme «ramsay» for CinemaPress](https://raw.githubusercontent.com/CinemaPress/Theme-Ramsay/master/screenshot.png)
 
 :art: Theme «ramsay» for CinemaPress
 
-- [Ramsay.CinemaPress.io](http://Ramsay.CinemaPress.io/)
+- `«ramsay»`
 
 ## How to install?
 1. Download [GitHub](https://github.com/CinemaPress/Theme-Ramsay/archive/master.zip) or [GitLab](https://gitlab.com/CinemaPress/Theme-Ramsay/repository/archive.zip) or [BitBucket](https://bitbucket.org/cinemapress/theme-ramsay/get/master.zip)
